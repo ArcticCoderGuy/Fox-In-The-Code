@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fox-In-The-Code</title>
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fox-In-The-Code</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-
-</head>    
 <body>
-  <body>
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <img src="images/Frame%201.png" alt="Fox-In-The-Code Hero" class="hero-image">
-      
-      <div class="hero-text">
-        <h1>Fox-In-The-Code</h1>
-        <p>Ota yhteyttä ja kysy lisää!</p>
-        <a href="#" class="btn btn-primary">Ota Yhteyttä</a>
-      </div>
-    </section>
-  
-<!-- Tänne tulee jotain diipadaapaa ja sitärataa  #004F54 -->
 
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- NAVIGAATIO -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Fox-In-the-Code</a> 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
-         <span class="navbar-toggler-icon"></span>
-       
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active" href="#">Etusivu</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Tietoa Meistä</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Ota Yhteyttä!</a></li>
-         </ul> 
-       
-        </div>
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="images/logo.png" alt="Fox-In-The-Code Logo" style="height: 50px; margin-right: 10px;">
+        <span>Fox-In-The-Code</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-   </nav>
-  
- 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- HERO SECTION -->
+  <section class="hero d-flex flex-column justify-content-center align-items-center text-center">
+    <h1>Above Robust</h1>
+    <h2>software solutions</h2>
+    <a href="#" class="btn btn-light mt-4 px-5 py-2">Get Started</a>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

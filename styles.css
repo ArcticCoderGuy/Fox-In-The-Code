@@ -1,22 +1,58 @@
+/* YLEINEN */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #004F54;
+  color: #F4F4F4;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+}
+
+/* HERO */
 .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #F4F4F4;
-    text-align: center;
-  }
-  
+  height: 90vh;
+  padding-top: 100px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.btn-light {
+  background-color: #F4F4F4;
+  color: #004F54;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.btn-light:hover {
+  background-color: #e0e0e0;
+  color: #004F54;
+}
+
+/* NAVIGAATIO */
+.navbar {
+  background-color: transparent !important;
+}
+
+.nav-link {
+  color: #F4F4F4 !important;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
