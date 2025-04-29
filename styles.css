@@ -40,33 +40,33 @@ body {
 
 /* LOGORYHMÄ_ logo ja brändinimi*/
 .logo-group {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  display: flex; /* Logo ja teksti vierekkäin */
+  align-items: center; /* Keskitetään pystysuunnassa */
+  gap: 1.25rem; /* Väli logon ja tekstin välillä */
 }
 /* Logon ulkoasu */
 .logo {
-  height: 72px;
-  width: auto;
+  height: 72px; /* Logon korkeus */
+  width: auto; /* Automaattinen leveys mittasuhteet säilyttäen */
 }
 
 /* Brändinimi */
 .brand {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text-light);
+  font-size: 2rem; /* Isompi teksti */
+  font-weight: 600; /* Paksumpi fontti */
+  color: var(--text-light); /* Vaaleanharmaa väri */
 }
 
 /* NAVIGAATIOLINKIT */
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
+  list-style: none; /* Poistetaan listamerkit */
+  display: flex; /* Linkit riviin */
+  gap: 2rem; /* Väli linkkien välillä */
 }
 
 /* Yksittäinen linkki  */
 .nav-links a {
-  text-decoration: none;
+  text-decoration: none; /* Poistetaan alleviivaus */
   color: var(--text-light);
   font-weight: 500;
   font-size: 1.15rem;
@@ -74,37 +74,37 @@ body {
 
 /* HERO-OSIO: pääviesti ja nappi */
 .hero {
-  text-align: center;
-  padding: 6rem 2rem 5rem;
-  flex: 1;
+  text-align: center; /* Teksti keskitetty */
+  padding: 6rem 2rem 5rem; /* Ylä- ja alareunassa tilaa */
+  flex: 1; /* Hero vie kaiken jäljellä olevan tilan */
 }
 
 /* HERO-OSION TEKSTIT */
 .hero h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 3rem;
-  color: var(--text-light);
+  font-size: 4rem; /* Suuri fonttikoko */
+  font-weight: 700; /* Paksu fontti */
+  line-height: 1.3; /* Riviväli */
+  margin-bottom: 3rem; /* Väli otsikon ja tekstin välillä */
+  color: var(--text-light);  /* Vaaleanharmaa väri */
 }
 
 /* Painike */
 .btn {
-  background-color: var(--brand-light);
-  color: var(--brand-dark);
-  padding: 1.1rem 2.7rem;
-  font-size: 1.25rem;
-  font-weight: 600;
+  background-color: var(--brand-light); /* Vaaleanharmaa tausta */
+  color: var(--brand-dark); /* Tummanvihreä teksti */
+  padding: 1.1rem 2.7rem;  /* Sisätilaa napeille */
+  font-size: 1.25rem; /* Fonttikoko */
+  font-weight: 600; 
   border: none;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px; /* Pyöristetyt kulmat */
+  text-decoration: none; 
+  transition: all 0.3s ease-in-out; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Varjo painikkeelle */
 }
 
 /* Painikkeen hover-efekti */
 .btn:hover {
-  background-color: var(--accent);
+  background-color: var(--accent); /* Vaaleampi väri hover-tilassa */
 }
 
 /* ALAPALKIN (FOOTER) TYYLI */
@@ -115,8 +115,8 @@ footer {
   padding: 1.2rem 0;
   font-size: 0.85rem;
   font-weight: 400;
-  border-top: 1.5px solid #111;
-  margin-top: auto;
+  border-top: 1.5px solid #111; /* Ohut musta erotusviiva yläreunaan tyyliin Apple/IBM */
+  margin-top: auto; /* Työntää footerin alas, jos sisältöä on vähemmän kuin näyttö */
 }
 
 
