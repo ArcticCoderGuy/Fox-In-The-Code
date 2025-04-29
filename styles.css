@@ -1,58 +1,160 @@
-/* YLEINEN */
-html, body {
+/* VÄRI- JA TYYLIMÄÄRITYKSET KOKO SIVULLE */
+:root {
+  --brand-dark: #004F54; /* Tummanvihreä */
+  --brand-light: #F4F4F4; /* Vle tausta- ja nappiväri */
+  --text-light: #fefbf6; /* Vaaleanharmaa teksti */
+  --text-dark: #000; /* Musta teksti vaalealla taustalla */
+  --accent: #e4e4e4; /* Vaaleampi hover-väri napeille */
+}
+
+/* Nollataan oletusmarginaalit ja paddingit kaikilta elementeiltä */
+* {
   margin: 0;
   padding: 0;
-  background-color: #004F54;
-  color: #F4F4F4;
-  font-family: 'Segoe UI', sans-serif;
-  height: 100%;
+  box-sizing: border-box; /* Tämä varmistaa, että padding ja border lasketaan elementin kokonaisleveyteen ja -korkeuteen */
 }
 
-/* HERO */
-.hero {
-  height: 90vh;
-  padding-top: 100px;
+/* BODY: koko sivun yleisasetukset*/
+body {
+  font-family: 'Inter', sans-serif; /* Pääfontti */
+  background-color: var(--brand-dark); /* Sivun tausta */  color: var(--text-light); /* Tekstin perusväri */
+  display: flex; /* Sivun rakenne Flexboxilla */
+  flex-direction: column; /* Sisältö pystysuunnassa */
+  min-height: 100vh; /* Vähintään koko näytön korkeus */
 }
 
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin-top: 20px;
-}
-
-.btn-light {
-  background-color: #F4F4F4;
-  color: #004F54;
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-.btn-light:hover {
-  background-color: #e0e0e0;
-  color: #004F54;
-}
-
-/* NAVIGAATIO */
+/* (NAV) YLÄPALKKI*/
 .navbar {
-  background-color: transparent !important;
+  background-color: var(--brand-dark); /* Tummanvihreä tausta */
+  padding: 2rem 3rem; /* Sisätilaa ylä- ja sivusuunnassa */
 }
 
-.nav-link {
-  color: #F4F4F4 !important;
+/* Navigaation sisäinen kontti  */
+.nav-container {
+  max-width: 1200px; /* Maksimi leveys 1200px */
+  margin: 0 auto; /* Keskitetään vaakasuunnassa */
+  display: flex; /* Flexbox käytössä */
+  align-items: center; /* Keskitetään pystysuunnassa */
+    justify-content: space-between; /* Viedään logo vasemmalle ja linkit oikealle */
+}
+
+/* LOGORYHMÄ_ logo ja brändinimi*/
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+/* Logon ulkoasu */
+.logo {
+  height: 72px;
+  width: auto;
+}
+
+/* Brändinimi */
+.brand {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* NAVIGAATIOLINKIT */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Yksittäinen linkki  */
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
   font-weight: 500;
-  margin-left: 20px;
+  font-size: 1.15rem;
 }
 
-.nav-link:hover {
-  text-decoration: underline;
+/* HERO-OSIO: pääviesti ja nappi */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem 5rem;
+  flex: 1;
 }
 
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.5rem;
+/* HERO-OSION TEKSTIT */
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+  color: var(--text-light);
 }
+
+/* Painike */
+.btn {
+  background-color: var(--brand-light);
+  color: var(--brand-dark);
+  padding: 1.1rem 2.7rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Painikkeen hover-efekti */
+.btn:hover {
+  background-color: var(--accent);
+}
+
+/* ALAPALKIN (FOOTER) TYYLI */
+footer {
+  background-color: var(--brand-light);
+  color: var(--text-dark);
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 0.85rem;
+  font-weight: 400;
+  border-top: 1.5px solid #111;
+  margin-top: auto;
+}
+
+
+.nav-container {
+  display: flex;                    /* ← Flexbox käytössä */
+  justify-content: space-between;  /* ← Viedään logo vasemmalle ja linkit oikealle */
+  align-items: center;             /* ← keskitetään pystysuunnassa */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;                     /* ← väli logon ja tekstin välillä */
+}
+
+.logo {
+  height: 72px;
+  width: auto;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.nav-links {
+  display: flex;                   /* ← vaakarivi linkeille */
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+

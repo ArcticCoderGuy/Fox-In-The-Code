@@ -57,3 +57,65 @@ Sivuston tulee sisältää seuraavat osiot ja toiminnallisuudet:
 ---
 
 > ✅ Tämä pohja auttaa varmistamaan, että kaikki tehtävän vaatimukset täyttyvät.
+
+
+-------------------------------------
+
+# Fox-In-The-Code - verkkosivu
+
+**Tervetuloa Fox-In-The-Code ensimmäiseen julkaisuun!**
+
+Tämä projekti toteutettiin HTML5-, CSS- ja Bootstrap5 -teknologioilla.  
+Sivuston tarkoituksena on esitellä yrityksen brändiä ja palveluita, korostaen "Define → Build → Finish" -periaatteita.
+
+---
+
+## 🔥 Projektin sisältö:
+
+- Hero-sektio isolla kuvalla ja sloganilla
+- Navigointipalkki kolmella linkillä (Etusivu, Tietoa Meistä, Ota Yhteyttä)
+- Responsiivinen layout Bootstrapilla
+- Moderni äänisoitin Wavesurfer.js-kirjastolla
+- Favicon
+- CSS-tyylitiedosto erillisenä
+- Testattu Live Serverillä ja mobiilissa
+
+---
+
+## 🛠 Käytetyt teknologiat:
+
+- HTML5
+- CSS3
+- Bootstrap 5.3
+- Wavesurfer.js
+
+---
+
+## 📋 To-Do & jatkokehitysideoita:
+
+- Yhteydenottolomakkeen lisääminen
+- Tietoa Meistä -osio (Bootstrap card-komponentti)
+- Footer-osio (esim. yhteystiedot ja some-linkit)
+
+---
+
+## 📱 Responsiivisuus:
+
+Sivusto toimii mobiilissa, tabletilla ja desktopilla.  
+Testattu Windows ja Android -laitteilla.
+
+---
+
+## 🎯 Valmis julkaisu:
+
+Tämä versio täyttää peruskurssin vaatimukset ja palautuskriteerit:
+
+✅ HTML5 + Bootstrap  
+✅ Navigointi (3 linkkiä)  
+✅ Hero-kuva ja CTA  
+✅ Responsiivisuus  
+✅ Favicon  
+✅ Wavesurfer.js -äänisoitin  
+
+---
+
