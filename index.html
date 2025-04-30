@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fox-In-The-Code</title>
+
+  <!-- ===============================
+    FONTIT JA TYYLITIEDOSTOT
+  ==================================== -->
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Ulkoinen tyylitiedosto -->
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<!--Sivun sisältö alkaa-->
-  <!--Sivun otsikko alkaa-->
-  <header>
-    <h1>Fox-In-The-Code</h1>
-    <p>Welcome to our website!</p>
-  </header>
-  <!--Sivun otsikko päättyy-->
-<!--yläpalkki eli navigointipakki alkaa-->
-  <nav class="navbar">
-    <!--Tämä säiliö pitää logon vasemmalla ja linkit oikealle -->
-    <div class="nav-container">
 
-      <!--vasen puoli: logo + nimi -->
-      <div class="logo-group">
-        
-        <!--logokuva -->
-        <img src="images/logo.jpg" alt="Logo" class="logo"/>
-        
-        <!--Brändinimi logon vieressä -->
-         <span class="brand">Fox-In-The-Code</span>
+  <!-- ================================================
+   WRAPPER - koko sivun rakenne -> Käytetään flex:iä
+              ja 100vh-korkeutta
+
+     ========================================== -->
+    <div class="wrapper">
+
+
+              
+    <!-- ========================== 
+      YLÄOSA / NAVIGAATIO
+      ========================== -->
+      <nav class="nav-container">
+        <!-- Vasen puoli: Logo + brändinimi -->
+        <div class="logo-group">
+          <img src="images/logo.jpg" alt="Fox logo" class="logo"/>
+          <span class="brand">Fox-In-The-Code</span>
+        </div>
+
+        <!-- Keskiosa: Navigointilinkit -->
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </div>
+
+        <!-- Oikea puoli: varattu karusellille tai lisäsisällölle -->
+
+        <!-- Placeholder: karuselli lisätään myöhemmin -->
+    
+    </nav>
+
+    <!-- =========================
+       HERO-SEKTIO (etusivun pääviesti)
+  ========================== -->
+    <main class="hero">
+      <!-- ⭐️ Tässä on se kuva-hero, joka näkyy ylhäällä keskellä -->
+      <div class="hero-image">
+        <img src="images/slide3.jpg" alt="Hero image">
       </div>
 
-      <!-- Oikea puoli:linkit navigointiin-->
-      <ul class="nav-links">
+      <!--Hero-Teksti-->
+      <h1>Above robust<br>App- & Software solutions</h1>
+      <a href="#" class="btn">Get Started</a>
+    </main>
 
-        <!--Jokainen <li> on yksi valikkokohta -->
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-
-    </div> <!--nav-cointainer loppuu-->
-  </nav>
-  <!--Navigointipalkki päättyy-->
-  
-  
-  <main class="hero">
-  <!--Sankariosio eli etusivun isoin esittelyalue alkaa-->
-    <h1>Above robust<br>software solutions</h1>
-    <!--Cal-to-action-painike-->
-    <a href="#" class="btn">Get Started</a>
-  </main>
-  <!--Sankariosio loppuu-->
-
-
-  <footer>
-    <!--Alatunniste alkaa-->
-    <p>&copy; 2025 Fox-In-The-Code | All rights reserved.</p> <!--Alatunniste päättyy-->
-  </footer>
+    <!-- =========================
+       FOOTER / ALATUNNISTE
+  ========================== -->
+    <footer class="footer">
+      <p>&copy; 2025 Fox-In-The-Code | All rights reserved.</p>
+    </footer>
+  </div> <!-- /.wrapper -->
 
 </body>
-<!--Sivun sisältö päättyy-->
+
 </html>
-<!--HTML-dokumentti päättyy-->
