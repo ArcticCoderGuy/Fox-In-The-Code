@@ -37,7 +37,10 @@ body {
   align-items: center;
   padding: 1.5rem 2rem;
   border-top: 4px solid black; /* Tyylikäs musta yläviiva */
+  border-bottom: 3.1px solid rebeccapurple; /* Tyylikäs violetti alaviiva */
   background-color: #004040;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); /* Varjo alareunassa */
+
 }
 
 /* Vasen puoli: logo ja brändi */
