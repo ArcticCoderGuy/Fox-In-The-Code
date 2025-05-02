@@ -24,22 +24,26 @@
          YLÄOSA / NAVIGAATIO
     =============================== -->
         <nav class="nav-container">
-            <!-- Vasen puoli: Logo + brändinimi -->
             <div class="logo-group">
                 <img src="images/logo.jpg" alt="Fox logo" class="logo" />
                 <span class="brand">Fox-In-The-Code</span>
             </div>
-
-            <!-- Keskiosa: Navigointilinkit -->
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="services.html">Services</a>
             </div>
-
-            <!-- Oikea puoli: lisäsisältöä varten (esim. karuselli) -->
         </nav>
+
+        <!-- ===============================
+         NAVIN AALLOKUVA (KAAREVA VIOLETTI REUNA)
+    =============================== -->
+        <div class="nav-curve">
+            <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M 0 0 Q 50 1, 100 0" fill="rebeccapurple" />
+            </svg>
+        </div>
 
         <!-- ===============================
          SISÄLTÖALUE – ABOUT
@@ -47,63 +51,128 @@
         <main class="hero">
 
             <!-- =============================
-     ABOUT – MEISTÄ JA FILOSOFIASTA
-============================= -->
-            <section class="about-section">
+           ABOUT-OSIO – KUKA ME OLLAAN
+      ============================= -->
+            <!--
+      <section class="about-section">
 
-                <!-- Logo + slogan -->
-                <div class="about-logo">
-                    <img src="images/logo.jpg" alt="Fox-In-The-Code logo">
-                    <p class="slogan">ABOVE ROBUST SOFTWARE SOLUTIONS</p>
+        <!-- Logo + slogan -->
+            <div class="about-logo">
+                <img src="images/logo.jpg" alt="Fox-In-The-Code logo" />
+                <p class="slogan">ABOVE ROBUST SOFTWARE SOLUTIONS</p>
+            </div>
+
+            <!-- Otsikko + ingressi -->
+            <h2>Mitä me teemme</h2>
+            <p class="ingressi">
+                Helpotamme yritysten arjen arkkitehtuuria — yhdellä fiksulla sovelluksella kerrallaan.
+            </p>
+            <!-- =============================
+         MEISTÄ / FOX-IN-THE-CODE
+         ============================ -->
+
+
+            <!-- =============================
+             3-ASKELEEN METODI – DEFINE / BUILD / FINISH
+        ============================= -->
+
+            <section class="quality-icons">
+
+                <!-- DEFINE -->
+                <div class="define-title">
+                    <span class="bracket">{</span> DEFINE <span class="bracket">}</span>
+                </div>
+                <div class="quality-block">
+
+
+                    <p>Me määritämme/"paretoimme" ongelman ja sen ratkaisun yhdessä asiakkaan kanssa. Ymmärrämme liiketoimintanne
+                        tarpeet, jotta voimme luoda parhaan mahdollisen ratkaisun.</p>
                 </div>
 
-                <!-- Otsikko -->
-                <h2>Mitä me teemme</h2>
+                <!-- BUILD -->
+                <div class="define-title">
+                    <span class="bracket">{</span> BUILD <span class="bracket">}</span>
+                </div>
+                <div class="quality-block">
 
-                <!-- Ingressi -->
-                <p class="ingressi">
-                    Helpotamme yritysten arjen arkkitehtuuria — yhdellä fiksulla sovelluksella kerrallaan.
-                </p>
 
-                <!-- Vaalea tekstilohko -->
-
-                <div class="about-content-box">
-                    <p><strong>Meidän maailmassa laatu kiteytyy kolmeen asiaan.</strong></p>
-
-                    <div class="definition-block">
-                        <div class="step-row">
-                            <span class="step-label"><strong><u>DEFINE</u></strong></span>
-                            <p>Me määritämme ongelman ja sen ratkaisun yhdessä asiakkaan kanssa. Meidän tehtävämme on
-                                ymmärtää teidän liiketoimintanne ja sen tarpeet, jotta voimme luoda teille parhaan
-                                mahdollisen ratkaisun.</p>
-                        </div>
-
-                        <div class="step-row">
-                            <span class="step-label"><strong><u>BUILD</u></strong></span>
-                            <p>Me rakennamme ratkaisun, joka on skaalautuva ja kestävä. Meidän tiimimme koostuu
-                                asiantuntevista ohjelmoijista ja suunnittelijoista, jotka tekevät töitä yhdessä
-                                varmistaakseen, että lopputulos on täydellinen.</p>
-                        </div>
-
-                        <div class="step-row">
-                            <span class="step-label"><strong><u>FINISH</u></strong></span>
-                            <p>Me viimeistelemme ratkaisun ja varmistamme, että se toimii täydellisesti. Meidän tiimimme
-                                tekee tiivistä yhteistyötä teidän kanssanne varmistaakseen, että olette tyytyväisiä
-                                lopputulokseen ja että se täyttää kaikki tarpeenne.</p>
-                        </div>
-                    </div>
-
-                    <p><strong>Valmistamme sovelluksia, jotka solahtavat osaksi sitä mitä te jo teette – Mutta Paremmin.</strong></p>
+                    <p>Me rakennamme Teille suorituskykyisen ratkaisun, joka on skaalautuva ja kestävä. Verkostomme koostuu eri alan asiantuntevista
+                        ohjelmoijista ja suunnittelijoista.</p>
                 </div>
 
+                <!-- FINISH -->
+                <div class="define-title">
+                    <span class="bracket">{</span> FINISH <span class="bracket">}</span>
+                </div>
+                <div class="quality-block">
+
+
+                    <p>Viimeistelemme ratkaisun yhdessä asiakkaan kanssa varmistaaksemme, että se toimii juuri kuten
+                        pitää – ja vielä paremmin.</p>
+                </div>
 
             </section>
 
-            <!-- Tässä kohtaa jatkat osioilla: Define – Build – Finish -->
-            <!-- Esim. <section class="define"> ... </section> jne. -->
+            <section class="about-story">
 
-            <h1>Minkälainen On Teidän Uusi Menestystarinanne ?</h1>
-            <p></p>
+                <h2>Fox-In-The-Code lyhyesti</h2>
+                <p class="about-lead">
+                    Fox-In-The-Code on moderni kehitystoimisto, joka rakentaa ketteriä ja kestäviä sovelluksia
+                    asiakastarpeiden ytimeen.
+                    Meidät tunnetaan oikeasta fokuksesta – ja me keskitymme siihen mikä tuottaa oikeasti arvoa.
+                </p>
+
+                <div class="story-block">
+                    <h3>Näin kaikki sai alkunsa</h3>
+                    <p>Meidän tarinamme alkoi osaamisesta korjata monimutkaisia ja kankeita yritysprosesseja eri
+                        kokoisille yrityksille sekä järjestelmiä Lean-, SixSigma ja Scrum-menetelmien avulla.
+                        Aluksi keskityimme pieniin jatkuvan parannuksen integraatioihin – ja tänä päivänä tarkoituksemme
+                        on
+                        rakentaa kokonaisvaltaisia sovellusratkaisuja, jotka tukevat liiketoimintaa ja toimivat
+                        kestävänä alustana kasvulle myös AI:n ja ML-koneoppimisen kautta.</p>
+                </div>
+
+                <div class="story-block">
+                    <h3>Above Robust - ajattelu</h3>
+                    <p>
+                        Me tiedämme, että pelkkä hyvä ei enää riitä yrityksille kilpailussa. Me haluamme rakentaa Teille
+                        ratkaisuja, jotka kestävät kasvua, aikaa ja
+                        käyttöä sekä ovat helppoja ylläpitää. Meidän tiimimme on sitoutunut
+                        kehittämään <strong><u>suorituskykyistä koodia</strong></u></strong>, joka on puhdasta, selkeää
+                        ja tekee sen minkä lupaa.
+                        Juuri sen varmistamiseksi jokainen projektimme etenee kolmen vaiheen kautta:
+                        <strong>Define</strong>,
+                        <strong>Build</strong> ja <strong>Finish</strong>.
+                    </p>
+                </div>
+
+                <div class="story-block">
+                    <h3>Kuka me ollaan ?</h3>
+                    <p>
+                        Olen rakentaja, suunnittelija, kehittäjä ja kehittämisen kokenut monivuotinen asiantuntija vaativilta tuotanto-ja palveluliiketoiminnan aloilta.
+                        Yhdistän käytännönläheisen sovellussuunnittelun ja modernin teknologiaosaamisen. 
+                        
+                        Työkalupakkiini
+                        kuuluvat mm. VS Code, GitHub Actions, Python, JavaScript, Tailwind CSS, SQL, sekä REST API
+                        -integraatiot ja kevyt pilviarkkitehtuuri.
+
+                        Toimin itsenäisesti, mutta taustalla on laaja verkosto asiantuntijoita – tarvittaessa kokoan
+                        tiimin, jolla ratkaistaan isommatkin haasteet.
+                    </p>
+                </div>
+
+                <div class="story-cta">
+                    <h3>Tarvitsetko ratkaisun, joka ei hajoa eikä jää puolitiehen ?</h3>
+                    <a href="contact.html" class="btn">Ota yhteyttä</a>
+                </div>
+
+            </section>
+
+            <!-- =============================
+           CTA – KEHOTUS TOIMIA
+      ============================= -->
+
+
         </main>
 
         <!-- ===============================
