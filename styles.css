@@ -19,13 +19,17 @@ body {
 ============================ */
 
 .wrapper {
-  display: flex; /* Joustava asettelu */
-  flex-direction: column; /* Pystysuunnassa */
-  min-height: 100vh; /* Koko korkeus */
+  display: flex;
+  /* Joustava asettelu */
+  flex-direction: column;
+  /* Pystysuunnassa */
+  min-height: 100vh;
+  /* Koko korkeus */
 }
 
 .hero {
-  flex-grow: 1; /* Kasvaa täyttämään tilan */
+  flex-grow: 1;
+  /* Kasvaa täyttämään tilan */
 }
 
 /* ============================
@@ -36,10 +40,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  border-top: 4px solid black; /* Tyylikäs musta yläviiva */
-  border-bottom: 2.1px solid rebeccapurple; /* Tyylikäs violetti alaviiva */
+  border-top: 4px solid black;
+  /* Tyylikäs musta yläviiva */
+  border-bottom: 2.1px solid rebeccapurple;
+  /* Tyylikäs violetti alaviiva */
   background-color: #004040;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); /* Varjo alareunassa */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  /* Varjo alareunassa */
 
 }
 
@@ -53,7 +60,7 @@ body {
 
 /* Logo-kuva */
 .logo {
-  height: 50px;
+  height: 45px;
   width: auto;
 }
 
@@ -113,7 +120,8 @@ body {
    HERO-SEKTIO
 ============================ */
 .hero {
-  flex-grow: 1; /* Kasvaa täyttämään tilan */
+  flex-grow: 1;
+  /* Kasvaa täyttämään tilan */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,8 +160,9 @@ body {
   text-align: center;
   padding: 2rem 0;
   font-weight: 600;
-  border-top: 2px solid #ccc; /* Yläreunan viiva */
-  
+  border-top: 2px solid #ccc;
+  /* Yläreunan viiva */
+
 }
 
 /* ============================
@@ -162,7 +171,8 @@ body {
 .hero-image {
   max-width: 100%;
   height: auto;
-  margin-bottom: 2rem; /* väli kuvan ja tekstin väliin */
+  margin-bottom: 2rem;
+  /* väli kuvan ja tekstin väliin */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,12 +180,14 @@ body {
 
 .hero-image img {
   width: 48%;
-  max-width: 1000px;  /* rajoitetaan maksimileveys */
-  max-height: 100vh; /* rajoitetaan maksimikorkeus */
+  max-width: 1000px;
+  /* rajoitetaan maksimileveys */
+  max-height: 100vh;
+  /* rajoitetaan maksimikorkeus */
   height: auto;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================
@@ -220,7 +232,7 @@ body {
   border-radius: 8px;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 }
 
 .about-content-box p {
@@ -236,12 +248,14 @@ body {
 
 .definition-block {
   margin-top: 2rem;
-  text-align: left; /* ✅ Tasaus vasemmalle jotta tekstirakenne näyttää ammattimaiselta */
+  text-align: left;
+  /* ✅ Tasaus vasemmalle jotta tekstirakenne näyttää ammattimaiselta */
 }
 
 .step-row {
   display: flex;
-  flex-direction: column; /* ✅ Otsikko ja teksti allekkain */
+  flex-direction: column;
+  /* ✅ Otsikko ja teksti allekkain */
   margin-bottom: 2rem;
 }
 
@@ -251,4 +265,63 @@ body {
   text-transform: uppercase;
   color: #004040;
   margin-bottom: 0.5rem;
+
+}
+
+
+/* ============================
+   LOGOKARUSELLI – SAUMATON YKSI RIVI
+============================ */
+
+.logo-carousel {
+  overflow: hidden;
+  background-color: #004444;
+  padding: 1.0rem 0;
+  border-top: 1px solid #006060;
+  border-bottom: 1px solid #002020;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 125s linear infinite;
+}
+
+.logo-track img {
+  height: 30px;
+  margin: 0 2rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logo-track img:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+
+/* ========================
+     CTA-NAPPI HERO-ALUEELLA
+     ======================== */
+
+.btn {
+  background-color: #fff;
+  color: #003b3b;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffa500;
+  color: #fff;
 }
