@@ -4,11 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yhteydenotto – Fox-In-The-Code</title>
-
-  <!-- ===============================
-       FONTIT JA TYYLITIEDOSTOT
-  =============================== -->
+  <title>Ota yhteyttä  – Fox-In-The-Code</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -17,7 +13,7 @@
   <div class="wrapper">
 
     <!-- ===============================
-         NAVIGAATIO / YLÄPALKKI
+         NAVIGAATIO
     =============================== -->
     <nav class="nav-container">
       <div class="logo-group">
@@ -32,63 +28,63 @@
     </nav>
 
     <!-- ===============================
-         SANKARIOSIO / OTSIKKO + KUVAUS
+         PÄÄSISÄLTÖ: CONTACT
     =============================== -->
     <main class="contact-main">
-      <h1>Ota yhteyttä</h1>
+      <h1>Ota yhteyttä !</h1>
       <p class="contact-lead">
-        Kerro lyhyesti tarpeestasi – vastaan nopeasti. Toimin Torniosta käsin, mutta projektit liikkuvat koko Suomen ja tarvittaessa muun EU:n alueella.
+        Kerro lyhyesti tarpeestasi – vastaan nopeasti. Toimin Torniosta käsin, mutta projektit liikkuvat koko Suomen
+        ja tarvittaessa muun EU:n alueella.
       </p>
 
       <!-- ===============================
-           YHTEYDENOTTOLOMAKE – FORMSPREE
+           LOMAKE: FORMSPREE + JS
       =============================== -->
       <form action="https://formspree.io/f/xzzreeqq" method="POST" class="contact-form" id="contactForm">
         <label for="email">Sähköpostisi:</label>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" required />
 
         <label for="message">Viestisi:</label>
-        <textarea name="message" id="message" rows="6" required></textarea>
+        <textarea name="message" id="message" rows="5" required></textarea>
 
-        <button type="submit" class="btn">Lähetä viesti</button>
+        <button type="submit">Lähetä viesti</button>
       </form>
 
       <p id="form-response" class="form-response"></p>
 
       <!-- ===============================
-           YHTEYSTIEDOT – SÄHKÖPOSTI & PUH
+           YHTEYSTIEDOT
       =============================== -->
       <section class="contact-info">
         <h2>Yhteystiedot</h2>
-        <p><strong>Markus Kaprio</strong></p>
-        <p>Puhelin: <a href="tel:+358440606044">044 0606 044</a></p>
-        <p>Sähköposti: <span id="emailDisplay"></span></p>
+        <p><strong>Markus Kaprio</strong><br />
+          Puhelin: <a href="tel:+358440606044">044 0606 044</a><br />
+          Sähköposti: <span id="emailDisplay"></span>
+        </p>
       </section>
 
       <!-- ===============================
-           SIJAINTI / TORNIO-KARTTA
+           KARTTA: TORNIO
       =============================== -->
       <section class="map-section">
         <h2>Sijainti</h2>
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9383.650958046774!2d24.1498!3d65.8499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x442fd75253d6012d%3A0x37b13f2393c6a961!2sTornio!5e0!3m2!1sfi!2sfi!4v1683920385932!5m2!1sfi!2sfi" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <iframe
+          src="https://www.google.com/maps?q=torniocitycenter&output=embed"
+          width="600" height="350" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </section>
     </main>
 
     <!-- ===============================
-         ALATUNNISTE / FOOTER
+         FOOTER
     =============================== -->
     <footer class="footer">
-      <p>&copy; 2025 Fox-In-The-Code </span></p>
+      <p>&copy; 2025 Fox-In-The-Code | All rights reserved.</p>
     </footer>
+
   </div>
 
   <!-- ===============================
-       JAVASCRIPT – LOMAKE + EMAIL OBOFUSKOINTI
+       JavaScript: lomakeilmoitus
   =============================== -->
   <script>
     const form = document.getElementById("contactForm");
@@ -114,13 +110,12 @@
       });
     });
 
-    // Sähköpostin suojaus – sekä näkyviin että footer
+    // Emailin suojaus
     const user = "markus";
     const domain = "foxinthecode.fi";
     const email = `${user}@${domain}`;
     document.getElementById("emailDisplay").innerHTML = `<a href="mailto:${email}">${email}</a>`;
-    document.getElementById("footerEmail").innerHTML = `<a href="mailto:${email}">${email}</a>`;
   </script>
-
 </body>
+
 </html>
