@@ -14,23 +14,10 @@ body {
   line-height: 1.5;
 }
 
-/* =====================================
-   WRAPPER & HERO-PERUSRAKENNE
-===================================== */
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.hero {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
 }
 
 /* =====================================
@@ -85,7 +72,7 @@ body {
 }
 
 /* =====================================
-   NAVIN ALAVIIVA – KAAREVA SVG
+   NAVIN ALAVIIVA – SVG
 ===================================== */
 .nav-curve {
   height: 10px;
@@ -101,46 +88,34 @@ body {
 }
 
 /* =====================================
-   FOOTER / ALATUNNISTE
+   HERO-ALUE
 ===================================== */
-.footer {
-  background-color: #f4f4f4;
-  color: #002020;
-  text-align: center;
-  padding: 2rem 0;
-  font-weight: 600;
-  border-top: 2px solid #ccc;
-}
-
-/* =====================================
-   HERO-KUVA (ETUSIVUN PÄÄKUVA)
-===================================== */
-.hero-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 2rem;
+.hero {
+  flex-grow: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 2rem;
 }
 
 .hero-image img {
   width: 48%;
   max-width: 1000px;
-  max-height: 100vh;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /* =====================================
-   ABOUT-SEKTIO / LYHYT KUVAUS
+   ABOUT-SEKTIO
 ===================================== */
 .about-section {
-  text-align: center;
-  padding: 3rem 1rem;
   background-color: #005050;
+  padding: 3rem 1rem;
   color: white;
+  text-align: center;
 }
 
 .about-logo img {
@@ -177,14 +152,8 @@ body {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 }
 
-.about-content-box p {
-  margin-bottom: 1.25rem;
-  line-height: 1.6;
-  font-size: 1.05rem;
-}
-
 /* =====================================
-   BRÄNDIOTSIT (DEFINE, BUILD, FINISH)
+   DEFINE / BUILD / FINISH OTSIKOT
 ===================================== */
 .define-title {
   text-align: center;
@@ -202,7 +171,7 @@ body {
 }
 
 /* =====================================
-   3-ASKELEEN METODI – KORTIT
+   3-ASKELEEN METODI (kortit)
 ===================================== */
 .quality-icons {
   display: flex;
@@ -210,7 +179,6 @@ body {
   gap: 2rem;
   justify-content: center;
   padding: 2rem 1rem;
-  margin-top: 2rem;
 }
 
 .quality-block {
@@ -219,7 +187,6 @@ body {
   padding: 2rem;
   border-radius: 12px;
   width: 300px;
-  text-align: left;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
@@ -260,24 +227,24 @@ body {
    CTA-NAPPI
 ===================================== */
 .btn {
-  background-color: #fff;
-  color: #003b3b;
-  padding: 15px 24px;
+  background-color: #f7b700;
+  color: #002020;
+  padding: 12px 24px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 6px;
   text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
   display: inline-block;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #f7b700;
-  color: #fff;
+  background-color: #ffaa00;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
 /* =====================================
-   LOGOKARUSELLI (SAUMATON LOOP)
+   LOGOKARUSELLI
 ===================================== */
 .logo-carousel {
   overflow: hidden;
@@ -310,69 +277,172 @@ body {
 }
 
 /* =====================================
-   ABOUT STORY -ALUE (KOKONAISKERTOMUS)
+   CONTACT-SIVUN TYYLIT
 ===================================== */
-.about-story {
-  background-color: #004F54;
-  padding: 4rem 2rem;
-  max-width: 960px;
+.contact-main {
+  max-width: 700px;
   margin: 0 auto;
+  padding: 3rem 1.5rem;
   text-align: center;
 }
 
-.about-story h2 {
-  font-size: 2.5rem;
-  color: #f7b700;
-  margin-bottom: 1.5rem;
-  font-weight: 800;
-  
+.contact-main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
-.about-lead {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 3rem;
-  color: #ffffff;
-  text-align: left;
-}
-
-.story-block {
+.contact-lead {
+  font-size: 1.1rem;
   margin-bottom: 2.5rem;
-  background-color: #003b3b;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  text-align: left;
 }
 
-.story-block h3 {
-  font-size: 1.5rem;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f4f4f4;
+  color: #002020;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #f7b700;
+}
+
+.form-response {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* =====================================
+   YHTEYSTIEDOT
+===================================== */
+.contact-info {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  color: #f7b700;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+.footer {
+  background-color: #f4f4f4;
+  color: #002020;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+/* =====================================
+   YHTEYSTIEDOT & LOMAKE (CONTACT)
+===================================== */
+
+.contact-main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.contact-main h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
   color: #f7b700;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
-.story-block p {
-  font-size: 1.05rem;
-  line-height: 1.6;
+.contact-lead {
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
   color: #f4f4f4;
 }
 
-.story-cta {
-  margin-top: 3rem;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
 }
 
-.story-cta h3 {
-  font-size: 1.35rem;
-  margin-bottom: 1rem;
-  text-align: center;
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f4f4f4;
+  color: #002020;
+  font-family: 'Inter', sans-serif;
 }
 
-.story-cta .btn {
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #f7b700;
+}
+
+.contact-form button {
   background-color: #f7b700;
   color: #004040;
   font-weight: 700;
-  padding: 1.3rem 2.8rem;
-  border-radius: 8px;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #ffaa00;
+  color: white;
+}
+
+.contact-info {
+  margin-top: 3rem;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.contact-info a {
+  color: #f7b700;
   text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================
+   KARTTA-OSIO
+===================================== */
+
+.map-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.map-section iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
