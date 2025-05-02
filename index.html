@@ -9,52 +9,33 @@
   <!-- ===============================
     FONTIT JA TYYLITIEDOSTOT
   ==================================== -->
-
-  <!-- Google Fonts: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Ulkoinen tyylitiedosto -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
-  <!-- ================================================
-   WRAPPER - koko sivun rakenne -> Käytetään flex:iä
-              ja 100vh-korkeutta
-
-     ========================================== -->
   <div class="wrapper">
-
-
 
     <!-- ========================== 
       YLÄOSA / NAVIGAATIO
-      ========================== -->
+    ========================== -->
     <nav class="nav-container">
-      <!-- Vasen puoli: Logo + brändinimi -->
       <div class="logo-group">
         <img src="images/logo.jpg" alt="Fox logo" class="logo" />
         <span class="brand">Fox-In-The-Code</span>
       </div>
 
-      <!-- Keskiosa: Navigointilinkit -->
       <div class="nav-links">
         <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
       </div>
-
-      <!-- Oikea puoli: varattu karusellille tai lisäsisällölle -->
-
-      <!-- Placeholder: karuselli lisätään myöhemmin -->
-
     </nav>
 
     <!-- ============================
-     NAVIN ALAVIIVA / KAARRE (SVG)
-============================ -->
+      NAVIN ALAVIIVA / KAARRE (SVG)
+    ============================ -->
     <div class="nav-curve">
       <svg viewBox="0 0 100 10" preserveAspectRatio="none">
         <path d="M 0 0 Q 50 1, 100 0" fill="rebeccapurple" />
@@ -62,149 +43,109 @@
     </div>
 
     <!-- =========================
-       HERO-SEKTIO (etusivun pääviesti)
-  ========================== -->
+       HERO-SEKTIO (etusivun kuva)
+    ========================== -->
     <main class="hero">
-      <!-- ⭐️ Tässä on se kuva-hero, joka näkyy ylhäällä keskellä -->
       <div class="hero-image">
         <img src="images/slide4.png" alt="Hero image">
       </div>
 
-      <!--Hero-Teksti-->
-     
-<!-- ============================
-     LOGOKARUSELLI – SCROLLAAVA
-============================ -->
-<section class="logo-carousel">
-  <div class="logo-track">
-    <!-- Originaalit logot -->
-    <img src="images/logos/cplusplus.svg" alt="C++" />
-    <img src="images/logos/github.svg" alt="GitHub" />
-    <img src="images/logos/pytorch.svg" alt="PyTorch" />
-    <img src="images/logos/javascript.svg" alt="JavaScript" />
-    <img src="images/logos/githubactions.svg" alt="GitHub Actions" />
-    <img src="images/logos/kotlin.svg" alt="Kotlin" />
-    <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
-    <img src="images/logos/python.svg" alt="Python" />
-    <img src="images/logos/html5.svg" alt="HTML5" />
-    <img src="images/logos/mongodb.svg" alt="MongoDB" />
-    <img src="images/logos/pandas.svg" alt="Pandas" />
-    <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
-    <img src="images/logos/numpy.svg" alt="NumPy" />
-    <img src="images/logos/confluence.svg" alt="Confluence" />
-    <img src="images/logos/nextdotjs.svg" alt="Next.js" />
-    <img src="images/logos/sqlite.svg" alt="SQLite" />
-    <img src="images/logos/docker.svg" alt="Docker" />
-    <img src="images/logos/css.svg" alt="CSS" />
-    <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
-    <img src="images/logos/figma.svg" alt="Figma" />
-
-    <!-- 🔁 Duplikaatti saumattomaan rullaukseen -->
-    <img src="images/logos/cplusplus.svg" alt="C++" />
-    <img src="images/logos/github.svg" alt="GitHub" />
-    <img src="images/logos/pytorch.svg" alt="PyTorch" />
-    <img src="images/logos/javascript.svg" alt="JavaScript" />
-    <img src="images/logos/githubactions.svg" alt="GitHub Actions" />
-    <img src="images/logos/kotlin.svg" alt="Kotlin" />
-    <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
-    <img src="images/logos/python.svg" alt="Python" />
-    <img src="images/logos/html5.svg" alt="HTML5" />
-    <img src="images/logos/mongodb.svg" alt="MongoDB" />
-    <img src="images/logos/pandas.svg" alt="Pandas" />
-    <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
-    <img src="images/logos/numpy.svg" alt="NumPy" />
-    <img src="images/logos/confluence.svg" alt="Confluence" />
-    <img src="images/logos/nextdotjs.svg" alt="Next.js" />
-    <img src="images/logos/sqlite.svg" alt="SQLite" />
-    <img src="images/logos/docker.svg" alt="Docker" />
-    <img src="images/logos/css.svg" alt="CSS" />
-    <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
-    <img src="images/logos/figma.svg" alt="Figma" />
-
-    <!-- 🔁 Tupla-Duplikaatti saumattomaan rullaukseen -->
-    <img src="images/logos/cplusplus.svg" alt="C++" />
-    <img src="images/logos/github.svg" alt="GitHub" />
-    <img src="images/logos/pytorch.svg" alt="PyTorch" />
-    <img src="images/logos/javascript.svg" alt="JavaScript" />
-    <img src="images/logos/githubactions.svg" alt="GitHub Actions" />
-    <img src="images/logos/kotlin.svg" alt="Kotlin" />
-    <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
-    <img src="images/logos/python.svg" alt="Python" />
-    <img src="images/logos/html5.svg" alt="HTML5" />
-    <img src="images/logos/mongodb.svg" alt="MongoDB" />
-    <img src="images/logos/pandas.svg" alt="Pandas" />
-    <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
-    <img src="images/logos/numpy.svg" alt="NumPy" />
-    <img src="images/logos/confluence.svg" alt="Confluence" />
-    <img src="images/logos/nextdotjs.svg" alt="Next.js" />
-    <img src="images/logos/sqlite.svg" alt="SQLite" />
-    <img src="images/logos/docker.svg" alt="Docker" />
-    <img src="images/logos/css.svg" alt="CSS" />
-    <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
-    <img src="images/logos/figma.svg" alt="Figma" />
-
-    <!-- 🔁 Tupla-Tupla Duplikaatti saumattomaan rullaukseen -->
-    <img src="images/logos/cplusplus.svg" alt="C++" />
-    <img src="images/logos/github.svg" alt="GitHub" />
-    <img src="images/logos/pytorch.svg" alt="PyTorch" />
-    <img src="images/logos/javascript.svg" alt="JavaScript" />
-    <img src="images/logos/githubactions.svg" alt="GitHub Actions" />
-    <img src="images/logos/kotlin.svg" alt="Kotlin" />
-    <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
-    <img src="images/logos/python.svg" alt="Python" />
-    <img src="images/logos/html5.svg" alt="HTML5" />
-    <img src="images/logos/mongodb.svg" alt="MongoDB" />
-    <img src="images/logos/pandas.svg" alt="Pandas" />
-    <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
-    <img src="images/logos/numpy.svg" alt="NumPy" />
-    <img src="images/logos/confluence.svg" alt="Confluence" />
-    <img src="images/logos/nextdotjs.svg" alt="Next.js" />
-    <img src="images/logos/sqlite.svg" alt="SQLite" />
-    <img src="images/logos/docker.svg" alt="Docker" />
-    <img src="images/logos/css.svg" alt="CSS" />
-    <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
-    <img src="images/logos/figma.svg" alt="Figma" />
-
-    <!-- 🔁 Tripla-Tupla Duplikaatti saumattomaan rullaukseen -->
-    <img src="images/logos/cplusplus.svg" alt="C++" />
-    <img src="images/logos/github.svg" alt="GitHub" />
-    <img src="images/logos/pytorch.svg" alt="PyTorch" />
-    <img src="images/logos/javascript.svg" alt="JavaScript" />
-    <img src="images/logos/githubactions.svg" alt="GitHub Actions" />
-    <img src="images/logos/kotlin.svg" alt="Kotlin" />
-    <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
-    <img src="images/logos/python.svg" alt="Python" />
-    <img src="images/logos/html5.svg" alt="HTML5" />
-    <img src="images/logos/mongodb.svg" alt="MongoDB" />
-    <img src="images/logos/pandas.svg" alt="Pandas" />
-    <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
-    <img src="images/logos/numpy.svg" alt="NumPy" />
-    <img src="images/logos/confluence.svg" alt="Confluence" />
-    <img src="images/logos/nextdotjs.svg" alt="Next.js" />
-    <img src="images/logos/sqlite.svg" alt="SQLite" />
-    <img src="images/logos/docker.svg" alt="Docker" />
-    <img src="images/logos/css.svg" alt="CSS" />
-    <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
-    <img src="images/logos/figma.svg" alt="Figma" />
-  </div>
-</section>
-
-
-
-
-        
-
-
-        <!-- CTA-nappi -->
-        <div style="text-align: center; margin-top: 30px;">
-          <a href="#" class="btn">Get Started</a>
-        </div>
-
+      <!-- CTA-nappi -->
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="contact.html" class="btn">Get Started</a>
+      </div>
     </main>
+
+    <!-- ============================
+     LOGOKARUSELLI – SCROLLAAVA
+    ============================ -->
+    <section class="logo-carousel">
+      <div class="logo-track">
+        <!-- LOGOT: voit kopioida ja tuplata niin monta kertaa kuin haluat -->
+        <img src="images/logos/cplusplus.svg" alt="C++" />
+        <img src="images/logos/github.svg" alt="GitHub" />
+        <img src="images/logos/pytorch.svg" alt="PyTorch" />
+        <img src="images/logos/javascript.svg" alt="JavaScript" />
+        <img src="images/logos/githubactions.svg" alt="GitHub Actions" />
+        <img src="images/logos/kotlin.svg" alt="Kotlin" />
+        <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
+        <img src="images/logos/python.svg" alt="Python" />
+        <img src="images/logos/html5.svg" alt="HTML5" />
+        <img src="images/logos/mongodb.svg" alt="MongoDB" />
+        <img src="images/logos/pandas.svg" alt="Pandas" />
+        <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
+        <img src="images/logos/numpy.svg" alt="NumPy" />
+        <img src="images/logos/confluence.svg" alt="Confluence" />
+        <img src="images/logos/nextdotjs.svg" alt="Next.js" />
+        <img src="images/logos/sqlite.svg" alt="SQLite" />
+        <img src="images/logos/docker.svg" alt="Docker" />
+        <img src="images/logos/css.svg" alt="CSS" />
+        <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
+        <img src="images/logos/figma.svg" alt="Figma" />
+        <!-- Duplikaatit saumattomaan rullaukseen -->
+        <img src="images/logos/cplusplus.svg" alt="C++" />
+        <img src="images/logos/github.svg" alt="GitHub" />
+        <img src="images/logos/pytorch.svg" alt="PyTorch" />
+        <img src="images/logos/javascript.svg" alt="JavaScript" />
+        <img src="images/logos/githubactions.svg" alt="GitHub Actions" />
+        <img src="images/logos/kotlin.svg" alt="Kotlin" />
+        <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
+        <img src="images/logos/python.svg" alt="Python" />
+        <img src="images/logos/html5.svg" alt="HTML5" />
+        <img src="images/logos/mongodb.svg" alt="MongoDB" />
+        <img src="images/logos/pandas.svg" alt="Pandas" />
+        <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
+        <img src="images/logos/numpy.svg" alt="NumPy" />
+        <img src="images/logos/confluence.svg" alt="Confluence" />
+        <img src="images/logos/nextdotjs.svg" alt="Next.js" />
+        <img src="images/logos/sqlite.svg" alt="SQLite" />
+        <img src="images/logos/docker.svg" alt="Docker" />
+        <img src="images/logos/css.svg" alt="CSS" />
+        <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
+        <img src="images/logos/figma.svg" alt="Figma" />
+        <!-- Sama setti uudelleen, esim. copy-paste -->
+        <img src="images/logos/cplusplus.svg" alt="C++" />
+        <img src="images/logos/github.svg" alt="GitHub" />
+        <img src="images/logos/pytorch.svg" alt="PyTorch" />
+        <img src="images/logos/javascript.svg" alt="JavaScript" />
+        <img src="images/logos/githubactions.svg" alt="GitHub Actions" />
+        <img src="images/logos/kotlin.svg" alt="Kotlin" />
+        <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
+        <img src="images/logos/python.svg" alt="Python" />
+        <img src="images/logos/html5.svg" alt="HTML5" />
+        <img src="images/logos/mongodb.svg" alt="MongoDB" />
+        <img src="images/logos/pandas.svg" alt="Pandas" />
+        <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
+        <img src="images/logos/numpy.svg" alt="NumPy" />
+        <img src="images/logos/confluence.svg" alt="Confluence" />
+        <img src="images/logos/nextdotjs.svg" alt="Next.js" />
+        <img src="images/logos/sqlite.svg" alt="SQLite" />
+        <img src="images/logos/docker.svg" alt="Docker" />
+        <img src="images/logos/css.svg" alt="CSS" />
+        <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
+        <img src="images/logos/figma.svg" alt="Figma" />
+        <!-- Sama setti uudelleen -->
+        <img src="images/logos/kotlin.svg" alt="Kotlin" />
+        <img src="images/logos/tensorflow.svg" alt="TensorFlow" />
+        <img src="images/logos/python.svg" alt="Python" />
+        <img src="images/logos/html5.svg" alt="HTML5" />
+        <img src="images/logos/mongodb.svg" alt="MongoDB" />
+        <img src="images/logos/pandas.svg" alt="Pandas" />
+        <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" />
+        <img src="images/logos/numpy.svg" alt="NumPy" />
+        <img src="images/logos/confluence.svg" alt="Confluence" />
+        <img src="images/logos/nextdotjs.svg" alt="Next.js" />
+        <img src="images/logos/sqlite.svg" alt="SQLite" />
+        <img src="images/logos/docker.svg" alt="Docker" />
+        <img src="images/logos/css.svg" alt="CSS" />
+        <img src="images/logos/bootstrap.svg" alt="Bootstrap" />
+        <img src="images/logos/figma.svg" alt="Figma" />
+      </div>
+    </section>
 
     <!-- =========================
        FOOTER / ALATUNNISTE
-  ========================== -->
+    ========================== -->
     <footer class="footer">
       <p>&copy; 2025 Fox-In-The-Code | All rights reserved.</p>
     </footer>

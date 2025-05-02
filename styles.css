@@ -93,6 +93,25 @@ img {
 }
 
 /* =====================================
+   HERO-KUVA (ETUSIVUN KUVA)
+===================================== */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.hero-image img {
+  max-width: 430px;  /* Voit säätää tätä arvoa esim. 600px tai 640px */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =====================================
    HERO / ABOUT-SEKTIO
 ===================================== */
 .hero {
@@ -112,6 +131,8 @@ img {
 .about-logo img {
   width: 120px;
   margin-bottom: 0.5rem;
+  fle
+  
 }
 
 .slogan {
@@ -145,6 +166,14 @@ img {
   justify-content: center;
   gap: 2rem;
   padding: 2rem;
+}
+
+.quality-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  text-align: center;
 }
 
 .define-title {
@@ -194,46 +223,120 @@ img {
   font-size: 1rem;
   line-height: 1.6;
 }
-
 /* =====================================
-   ABOUT-TARINAOSIO
+   ABOUT-TARINAOSIO (tekstikortit)
 ===================================== */
 .about-story {
   padding: 4rem 1.5rem;
   max-width: 960px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
+
+.about-story h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.about-lead {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.story-cta {
+  margin-top: 3rem; /* lisää väliä ylempään laatikkoon */
+  text-align: center;
+}
+
+.story-cta h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem; /* tämä tuo väliä napin ja otsikon väliin */
+  color: #ffffff;
+}
+
 
 .story-block {
   background-color: #003b3b;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  margin-bottom: 2rem;
   text-align: left;
 }
 
 .story-block h3 {
-  color: #f7b700;
   font-size: 1.4rem;
+  font-weight: 800;
+  color: #f7b700;
   margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .story-block p {
   font-size: 1.05rem;
-  color: #f4f4f4;
   line-height: 1.7;
+  color: #f4f4f4;
 }
 
+/* =====================================
+   ABOUT-TEKSTI JA LOGOALUE
+===================================== */
+.about-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #005050;
+}
+
+.about-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.about-logo img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.slogan {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.about-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #f7b700;
+  margin-bottom: 1rem;
+}
+
+.ingressi {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+  text-align: center;
+}
 /* =====================================
    CTA-NAPPI
 ===================================== */
 .btn {
   background-color: #f7b700;
   color: #002020;
-  padding: 12px 24px;
+  padding: 20px 39px;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
   display: inline-block;
@@ -253,6 +356,50 @@ img {
   text-align: center;
   padding: 2rem 0;
   margin-top: auto;
+}
+
+/* =====================================
+   LOGOKARUSELLI – SCROLLAAVA
+===================================== */
+.logo-carousel {
+  overflow: hidden;
+  background-color: #004444;
+  padding: 1rem 0;
+  border-top: 1px solid #006060;
+  border-bottom: 1px solid #002020;
+  margin-top: 3rem;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 120s linear infinite;
+}
+
+.logo-track img {
+  height: 30px;
+  margin: 0 1.5rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logo-track img:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logo-carousel {
+  overflow: hidden;
+  background-color: #004444;
+  padding: 2rem 0; /* 🔁 was 1rem → nyt enemmän tilaa ylös ja alas */
+  border-top: 1px solid #006060;
+  border-bottom: 1px solid #002020;
+  margin-top: 4rem; /* 🔁 enemmän väliä sisältöön nähden */
+  margin-bottom: 3rem; /* 🔁 lisää tilaa ennen footeria */
 }
 
 /* =====================================
@@ -385,4 +532,90 @@ img {
   border: none;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+<!--==================================
+    SERVICES OSIO JA TAVARAT
+===================================== -->
+
+
+.under-construction {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.construction-logo {
+  width: 220px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+
+}
+
+.under-construction h1 {
+  font-size: 2.2rem;
+  color: #f7b700;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.under-construction p {
+  font-size: 1.1rem;
+  color: #f4f4f4;
+}
+
+/* =====================================
+   SERVICES: RAKENTEILLA & TUOTEKUVAT
+===================================== */
+.under-construction {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.under-construction h1 {
+  font-size: 2.2rem;
+  color: #f7b700;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.under-construction p {
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.construction-logo {
+  width: 300px; /* Voit säätää esim. 220px tai 360px */
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.construction-logo:hover {
+  transform: scale(1.03);
+}
+
+/* =====================================
+   PALVELUT: TUOTEKUVAT RIVISSÄ
+===================================== */
+.product-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.product-image {
+  width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.04);
 }
