@@ -284,7 +284,7 @@ body {
 .logo-track {
   display: flex;
   width: max-content;
-  animation: scroll 125s linear infinite;
+  animation: scroll 155s linear infinite;
 }
 
 .logo-track img {
