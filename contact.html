@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ota yhteyttä  – Fox-In-The-Code</title>
+  <title>Ota yhteyttä – Fox-In-The-Code</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -12,21 +12,9 @@
 <body>
   <div class="wrapper">
 
-    <!-- ===============================
-         NAVIGAATIO
-    =============================== -->
-    <nav class="nav-container">
-      <div class="logo-group">
-        <img src="images/logo.jpg" alt="Fox logo" class="logo" />
-        <span class="brand">Fox-In-The-Code</span>
-      </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="services.html">Services</a>
-      </div>
-    </nav>
+
+    <!--============================================================== HOX! Navigaatio ladataan dynaamisesti tiedostosta erillisillä nav.html JavaScriptillä* (*lomakeilmoitus) HOX!  ===========================================================-->
+
 
     <!-- ===============================
          PÄÄSISÄLTÖ: CONTACT
@@ -38,20 +26,23 @@
         ja tarvittaessa muun EU:n alueella.
       </p>
 
-      <!-- ===============================
-           LOMAKE: FORMSPREE + JS
-      =============================== -->
-      <form action="https://formspree.io/f/xzzreeqq" method="POST" class="contact-form" id="contactForm">
-        <label for="email">Sähköpostisi:</label>
-        <input type="email" name="email" id="email" required />
+      Eli laita mulle valmis osio: <!-- ===============================
+      LOMAKE: FORMSPREE + JS
+ =============================== -->
+      <form action="https://formspree.io/f/xzzreeqq" method="POST" class="contact-form" id="contactForm"> <label
+          for="email">Sähköpostisi:</label> <input type="email" name="email" id="email" placeholder="example@email.com"
+          required />
+
 
         <label for="message">Viestisi:</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
+        <textarea name="message" id="message" rows="5" placeholder=" Write your message here..." required></textarea>
 
         <button type="submit">Lähetä viesti</button>
       </form>
 
       <p id="form-response" class="form-response"></p>
+
+
 
       <!-- ===============================
            YHTEYSTIEDOT
@@ -69,9 +60,8 @@
       =============================== -->
       <section class="map-section">
         <h2>Sijainti</h2>
-        <iframe
-          src="https://www.google.com/maps?q=torniocitycenter&output=embed"
-          width="600" height="350" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps?q=torniocitycenter&output=embed" width="600" height="350"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </section>
     </main>
 
@@ -85,9 +75,10 @@
   </div>
 
   <!-- ===============================
-       JavaScript: lomakeilmoitus
-  =============================== -->
+     JavaScript: lomakeilmoitus + navin dynaaminen lataus
+=============================== -->
   <script>
+    // LOMAKE: Formspree + ilmoitus
     const form = document.getElementById("contactForm");
     const responseMessage = document.getElementById("form-response");
 
@@ -116,7 +107,27 @@
     const domain = "foxinthecode.fi";
     const email = `${user}@${domain}`;
     document.getElementById("emailDisplay").innerHTML = `<a href="mailto:${email}">${email}</a>`;
+
+    // NAVIGAATION LATAUS
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        const placeholder = document.createElement("div");
+        placeholder.innerHTML = data;
+        document.body.insertBefore(placeholder, document.body.firstChild);
+
+        const script = document.createElement("script");
+        script.innerHTML = `
+        function toggleMenu() {
+          document.getElementById('nav-links').classList.toggle('active');
+        }
+      `;
+        document.body.appendChild(script);
+      });
   </script>
+
+
+
 </body>
 
 </html>

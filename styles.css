@@ -20,6 +20,16 @@ img {
   display: block;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #005050;
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;      /* Estää sivuttain vierityksen */
+  min-height: 100vh;       /* Varmistaa, että footer pysyy alhaalla */
+}
+
+
 /* =====================================
    WRAPPER
 ===================================== */
@@ -27,6 +37,10 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 /* =====================================
@@ -362,23 +376,29 @@ img {
    LOGOKARUSELLI – SCROLLAAVA
 ===================================== */
 .logo-carousel {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
+  width: 100%;
   background-color: #004444;
-  padding: 1rem 0;
+  padding: 2rem 0;
   border-top: 1px solid #006060;
   border-bottom: 1px solid #002020;
   margin-top: 3rem;
+  margin-bottom: 0;
 }
 
 .logo-track {
   display: flex;
+  flex-wrap: nowrap;
   width: max-content;
-  animation: scroll 120s linear infinite;
+  animation: scroll 60s linear infinite;
+  gap: 2rem;
+  align-items: center;
 }
 
 .logo-track img {
   height: 30px;
-  margin: 0 1.5rem;
+  margin: 0;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
@@ -392,15 +412,6 @@ img {
   100% { transform: translateX(-50%); }
 }
 
-.logo-carousel {
-  overflow: hidden;
-  background-color: #004444;
-  padding: 2rem 0; /* 🔁 was 1rem → nyt enemmän tilaa ylös ja alas */
-  border-top: 1px solid #006060;
-  border-bottom: 1px solid #002020;
-  margin-top: 4rem; /* 🔁 enemmän väliä sisältöön nähden */
-  margin-bottom: 3rem; /* 🔁 lisää tilaa ennen footeria */
-}
 
 /* =====================================
    ANIMAATIOT
@@ -618,4 +629,211 @@ img {
 
 .product-image:hover {
   transform: scale(1.04);
+}
+
+/* =====================================
+   RESPONSIIVISUUS ja MEDIATIEDOSTOT
+===================================== */
+
+/* Burger-painike */
+.burger {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease;
+}
+
+/* Hamburger näkyviin mobiilissa */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+  }
+
+  .logo-group {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    gap: 0.4rem;
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  .nav-links a {
+    padding: 0.3rem 0;
+    font-size: 1.05rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Pieni animaatio navin avautuessa */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Desktop-näkymä: näytä nav-links normaalisti */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .burger {
+    display: none;
+  }
+}
+
+/* ================================
+   NAVIGAATIO – yleinen tyyli
+================================ */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #004040;
+  border-top: 4px solid black;
+  border-bottom: 2px solid rebeccapurple;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  height: 45px;
+  width: auto;
+}
+
+.brand {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f7b700;
+}
+
+/* ================================
+   BURGER-PAINIKE
+================================ */
+.burger {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease;
+}
+
+/* ================================
+   RESPONSIVE: mobiilivalikko
+================================ */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+  }
+
+  .logo-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    gap: 0.4rem;
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.3rem 0;
+    font-size: 1.05rem;
+  }
+}
+
+/* ================================
+   DESKTOP-TILA: pakotetaan näkyväksi
+================================ */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .burger {
+    display: none;
+  }
+}
+
+/* ================================
+   Animaatio mobiilivalikolle
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

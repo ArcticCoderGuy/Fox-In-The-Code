@@ -16,6 +16,7 @@ Sivuston tulee sisältää seuraavat osiot ja toiminnallisuudet:
   - Etusivu
   - Tietoa meistä
   - Ota yhteyttä
+  - Luotu oma nav.html-tiedosto juureen jonka ohjaa kaikkia sivuja eli "Lean"-hengessä muutokset tehdään vain yhteen paikkaan vakioidusti.
 
 ---
 
@@ -120,3 +121,4 @@ Tämä versio täyttää peruskurssin vaatimukset ja palautuskriteerit:
 ---
 
 Materiaalit: https://simpleicons.org/?q=PostGe
+

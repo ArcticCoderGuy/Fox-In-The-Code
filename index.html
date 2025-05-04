@@ -16,31 +16,8 @@
 <body>
   <div class="wrapper">
 
-    <!-- ========================== 
-      YLÄOSA / NAVIGAATIO
-    ========================== -->
-    <nav class="nav-container">
-      <div class="logo-group">
-        <img src="images/logo.jpg" alt="Fox logo" class="logo" />
-        <span class="brand">Fox-In-The-Code</span>
-      </div>
-
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-
-    <!-- ============================
-      NAVIN ALAVIIVA / KAARRE (SVG)
-    ============================ -->
-    <div class="nav-curve">
-      <svg viewBox="0 0 100 10" preserveAspectRatio="none">
-        <path d="M 0 0 Q 50 1, 100 0" fill="rebeccapurple" />
-      </svg>
-    </div>
+    <!-- Navigaatio ladataan dynaamisesti tiedostosta nav.html JavaScriptillä -->
+     
 
     <!-- =========================
        HERO-SEKTIO (etusivun kuva)
@@ -150,7 +127,29 @@
       <p>&copy; 2025 Fox-In-The-Code | All rights reserved.</p>
     </footer>
   </div> <!-- /.wrapper -->
-
-</body>
-
-</html>
+  
+  <!-- ===============================
+    JavaScript: lomakeilmoitus
+  =============================== -->
+  <script>
+    // Lataa nav.html ja lisää sen sivulle
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        const placeholder = document.createElement("div");
+        placeholder.innerHTML = data;
+        document.body.insertBefore(placeholder, document.body.firstChild);
+  
+        // Aktivoi burger-valikon toiminto navin lataamisen jälkeen
+        const script = document.createElement("script");
+        script.innerHTML = `
+          function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+          }
+        `;
+        document.body.appendChild(script);
+      });
+  </script>
+  </body>
+  </html>
+  
