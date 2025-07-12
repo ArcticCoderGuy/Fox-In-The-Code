@@ -1,146 +1,351 @@
 <!DOCTYPE html>
 <html lang="fi">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – Fox-In-The-Code</title>
-
-  <!-- ===============================
-       FONTIT JA TYYLITIEDOSTOT
-  =============================== -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tietoa Meistä – Fox-In-The-Code</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'fox-orange': '#E97C35',
+                        'fox-orange-light': '#F19658',
+                        'fox-orange-dark': '#D86A2E',
+                        'fox-blue': '#1E3A8A',
+                        'fox-blue-light': '#3B82F6',
+                        'fox-blue-dark': '#1E40AF',
+                        'fox-green': '#059669',
+                        'fox-green-light': '#10B981',
+                        'fox-green-dark': '#047857',
+                        'fox-dark': '#0F172A',
+                        'fox-gray': '#64748B',
+                        'fox-light': '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #1E3A8A 0%, #059669 50%, #E97C35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-morphism {
+            background: rgba(30, 58, 138, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(5, 150, 105, 0.2);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #059669 100%);
+        }
+        
+        .code-pattern {
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(5, 150, 105, 0.15) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
 </head>
 
-<body>
-
-  
-
-   <!--============================================================== HOX! Navigaatio ladataan dynaamisesti tiedostosta erillisillä nav.html JavaScriptillä* (*lomakeilmoitus) HOX!  ===========================================================-->
-
-
-
-    <!-- ===============================
-         SISÄLTÖALUE – ABOUT
-    =============================== -->
-    <main class="hero">
-
-      <section class="about-section">
-        <!-- Palautettu logo-osio -->
-        <div class="about-logo">
-          <img src="images/logo.jpg" alt="Fox-In-The-Code logo">
-          <p class="slogan">ABOVE ROBUST SOFTWARE SOLUTIONS</p>
+<body class="font-inter bg-fox-dark text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass-morphism">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center space-x-3">
+                        <img src="images/slide4.png" alt="Fox Logo" class="h-10 w-10 rounded-full object-cover">
+                        <div>
+                            <h1 class="text-xl font-bold gradient-text">Fox-In-The-Code</h1>
+                            <p class="text-xs text-fox-orange-light">www.foxinthecode.fi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-fox-green transition-colors duration-300">Etusivu</a>
+                        <a href="services.html" class="text-gray-300 hover:text-fox-green transition-colors duration-300">Palvelut</a>
+                        <a href="about.html" class="text-fox-green border-b-2 border-fox-green font-semibold">Tietoa Meistä</a>
+                        <a href="contact.html" class="bg-fox-green hover:bg-fox-green-dark text-white px-4 py-2 rounded-lg transition-colors duration-300">Ota Yhteyttä</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-fox-green">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <!-- Otsikko + ingressi -->
-        <h2>Mitä me teemme</h2>
-        <p class="ingressi">
-          Helpotamme yritysten arjen arkkitehtuuria — yhdellä fiksulla sovelluksella kerrallaan.
-        </p>
-      </section>
-
-      <!-- =============================
-           3-ASKELEEN METODI – DEFINE / BUILD / FINISH
-      ============================= -->
-      <section class="quality-icons">
-        <div class="quality-step">
-          <div class="define-title"><span class="bracket">{</span> DEFINE <span class="bracket">}</span></div>
-          <div class="quality-block">
-            <p>Me määritämme/"paretoimme" ongelman ja sen ratkaisun yhdessä asiakkaan kanssa.<br />
-            Ymmärrämme liiketoimintanne tarpeet, jotta voimme luoda parhaan mahdollisen ratkaisun.</p>
-          </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden glass-morphism">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-fox-green">Etusivu</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-300 hover:text-fox-green">Palvelut</a>
+                <a href="about.html" class="block px-3 py-2 text-fox-green font-semibold">Tietoa Meistä</a>
+                <a href="contact.html" class="block px-3 py-2 bg-fox-green text-white rounded-lg">Ota Yhteyttä</a>
+            </div>
         </div>
-      
-        <div class="quality-step">
-          <div class="define-title"><span class="bracket">{</span> BUILD <span class="bracket">}</span></div>
-          <div class="quality-block">
-            <p>Me rakennamme Teille suorituskykyisen ratkaisun,<br />
-            joka on skaalautuva ja kestävä. Verkostomme koostuu eri alan asiantuntevista ohjelmoijista ja suunnittelijoista.</p>
-          </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[50vh] flex items-center justify-center hero-bg code-pattern pt-24">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="mb-8">
+                <img src="images/slide4.png" alt="Fox-In-The-Code Logo" class="w-32 h-32 mx-auto mb-6 rounded-full shadow-2xl">
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Mitä Me Teemme</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Helpotamme yritysten arjen arkkitehtuuria — yhdellä fiksulla sovelluksella kerrallaan
+            </p>
         </div>
-      
-        <div class="quality-step">
-          <div class="define-title"><span class="bracket">{</span> FINISH <span class="bracket">}</span></div>
-          <div class="quality-block">
-            <p>Viimeistelemme ratkaisun yhdessä asiakkaan kanssa varmistaaksemme,<br />
-            että se toimii juuri kuten pitää – ja vielä paremmin.</p>
-          </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-fox-light text-fox-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-6 py-2 bg-fox-green/10 rounded-full mb-6">
+                    <span class="text-fox-green font-semibold">ABOVE ROBUST SOFTWARE SOLUTIONS</span>
+                </div>
+                <p class="text-2xl md:text-3xl text-fox-gray leading-relaxed max-w-4xl mx-auto">
+                    Fox-In-The-Code on moderni kehitystoimisto, joka rakentaa ketteriä ja kestäviä sovelluksia asiakastarpeiden ytimeen.
+                </p>
+            </div>
         </div>
-      </section>
-      
+    </section>
 
-      <!-- =============================
-           TARINAOSIO – KUKA ON FOX-IN-THE-CODE
-      ============================= -->
-      <section class="about-story">
-        <h2>Fox-In-The-Code lyhyesti</h2>
-        <p class="about-lead">
-          Fox-In-The-Code on moderni kehitystoimisto, joka rakentaa ketteriä ja kestäviä sovelluksia asiakastarpeiden ytimeen.
-          Meidät tunnetaan oikeasta fokuksesta – ja me keskitymme siihen mikä tuottaa oikeasti arvoa.
-        </p>
-
-        <div class="story-block">
-          <h3>Näin kaikki sai alkunsa</h3>
-          <p>Meidän tarinamme alkoi osaamisesta korjata monimutkaisia ja kankeita yritysprosesseja eri kokoisille yrityksille sekä järjestelmiä Lean-, SixSigma ja Scrum-menetelmien avulla. Aluksi keskityimme pieniin jatkuvan parannuksen integraatioihin – ja tänä päivänä tarkoituksemme on rakentaa kokonaisvaltaisia sovellusratkaisuja, jotka tukevat liiketoimintaa ja toimivat kestävänä alustana kasvulle myös AI:n ja ML-koneoppimisen kautta.</p>
+    <!-- Methodology Section -->
+    <section class="py-20 bg-fox-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Kolmen Vaiheen Metodi</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Jokainen projektimme etenee varmistetun prosessin kautta laadun ja tuloksen varmistamiseksi
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- DEFINE -->
+                <div class="glass-morphism rounded-2xl p-8 text-center border-2 border-fox-blue/30">
+                    <div class="mb-6">
+                        <div class="text-6xl font-mono text-fox-blue-light mb-4">{ }</div>
+                        <h3 class="text-3xl font-bold text-fox-blue-light">DEFINE</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Me määritämme/"paretoimme" ongelman ja sen ratkaisun yhdessä asiakkaan kanssa. 
+                        Ymmärrämme liiketoimintanne tarpeet, jotta voimme luoda parhaan mahdollisen ratkaisun.
+                    </p>
+                </div>
+                
+                <!-- BUILD -->
+                <div class="glass-morphism rounded-2xl p-8 text-center border-2 border-fox-green/30">
+                    <div class="mb-6">
+                        <div class="text-6xl font-mono text-fox-green-light mb-4">{ }</div>
+                        <h3 class="text-3xl font-bold text-fox-green-light">BUILD</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Me rakennamme Teille suorituskykyisen ratkaisun, joka on skaalautuva ja kestävä. 
+                        Verkostomme koostuu eri alan asiantuntevista ohjelmoijista ja suunnittelijoista.
+                    </p>
+                </div>
+                
+                <!-- FINISH -->
+                <div class="glass-morphism rounded-2xl p-8 text-center border-2 border-fox-orange/30">
+                    <div class="mb-6">
+                        <div class="text-6xl font-mono text-fox-orange-light mb-4">{ }</div>
+                        <h3 class="text-3xl font-bold text-fox-orange-light">FINISH</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Viimeistelemme ratkaisun yhdessä asiakkaan kanssa varmistaaksemme, 
+                        että se toimii juuri kuten pitää – ja vielä paremmin.
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="story-block">
-          <h3>Above Robust - ajattelu</h3>
-          <p>
-            Me tiedämme, että pelkkä hyvä ei enää riitä yrityksille kilpailussa. Me haluamme rakentaa Teille ratkaisuja, jotka kestävät kasvua, aikaa ja käyttöä sekä ovat helppoja ylläpitää. Meidän tiimimme on sitoutunut kehittämään <strong><u>suorituskykyistä koodia</u></strong>, joka on puhdasta, selkeää ja tekee sen minkä lupaa. Juuri sen varmistamiseksi jokainen projektimme etenee kolmen vaiheen kautta: <strong>Define</strong>, <strong>Build</strong> ja <strong>Finish</strong>.
-          </p>
+    <!-- Story Section -->
+    <section class="py-20 bg-fox-light text-fox-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Fox-In-The-Code Lyhyesti</h2>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Origins -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h3 class="text-3xl font-bold text-fox-blue-dark mb-6">Näin Kaikki Sai Alkunsa</h3>
+                    <p class="text-lg text-fox-gray leading-relaxed">
+                        Meidän tarinamme alkoi osaamisesta korjata monimutkaisia ja kankeita yritysprosesseja eri kokoisille yrityksille 
+                        sekä järjestelmiä Lean-, SixSigma ja Scrum-menetelmien avulla. Aluksi keskityimme pieniin jatkuvan parannuksen 
+                        integraatioihin – ja tänä päivänä tarkoituksemme on rakentaa kokonaisvaltaisia sovellusratkaisuja, jotka tukevat 
+                        liiketoimintaa ja toimivat kestävänä alustana kasvulle myös AI:n ja ML-koneoppimisen kautta.
+                    </p>
+                </div>
+                
+                <!-- Philosophy -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h3 class="text-3xl font-bold text-fox-green-dark mb-6">Above Robust - Ajattelu</h3>
+                    <p class="text-lg text-fox-gray leading-relaxed mb-6">
+                        Me tiedämme, että pelkkä hyvä ei enää riitä yrityksille kilpailussa. Me haluamme rakentaa Teille ratkaisuja, 
+                        jotka kestävät kasvua, aikaa ja käyttöä sekä ovat helppoja ylläpitää. Meidän tiimimme on sitoutunut kehittämään 
+                        <strong class="text-fox-green">suorituskykyistä koodia</strong>, joka on puhdasta, selkeää ja tekee sen minkä lupaa.
+                    </p>
+                    <p class="text-lg text-fox-gray leading-relaxed">
+                        Juuri sen varmistamiseksi jokainen projektimme etenee kolmen vaiheen kautta: 
+                        <strong class="text-fox-blue">Define</strong>, <strong class="text-fox-green">Build</strong> ja <strong class="text-fox-orange">Finish</strong>.
+                    </p>
+                </div>
+                
+                <!-- Team -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h3 class="text-3xl font-bold text-fox-orange-dark mb-6">Kuka on Fox-In-The-Code?</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <p class="text-lg text-fox-gray leading-relaxed mb-6">
+                                Olen rakentaja, suunnittelija, kehittäjä ja kehittämisen kokenut monivuotinen asiantuntija vaativilta 
+                                tuotanto- ja palveluliiketoiminnan aloilta. Yhdistän käytännönläheisen sovellussuunnittelun ja modernin teknologiaosaamisen.
+                            </p>
+                            <p class="text-lg text-fox-gray leading-relaxed mb-6">
+                                Työkalupakkiini kuuluvat mm. VS Code, GitHub Actions, Python, JavaScript, Tailwind CSS, SQL 
+                                sekä REST API -integraatiot ja kevyt pilviarkkitehtuuri.
+                            </p>
+                            <p class="text-lg text-fox-gray leading-relaxed">
+                                Toimin itsenäisesti, mutta taustalla on laaja verkosto eri alan asiantuntijoita – tarvittaessa kokoan tiimin, 
+                                jolla ratkaistaan ne isommat ja kinkkisimmätkin haasteet.
+                            </p>
+                        </div>
+                        <div class="lg:order-first">
+                            <div class="bg-gradient-to-br from-fox-blue/10 to-fox-green/10 rounded-2xl p-8">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-fox-blue/20 rounded-lg p-4 text-center">
+                                        <div class="text-2xl font-bold text-fox-blue-dark">10+</div>
+                                        <div class="text-sm text-fox-gray">Vuotta kokemusta</div>
+                                    </div>
+                                    <div class="bg-fox-green/20 rounded-lg p-4 text-center">
+                                        <div class="text-2xl font-bold text-fox-green-dark">50+</div>
+                                        <div class="text-sm text-fox-gray">Projektia</div>
+                                    </div>
+                                    <div class="bg-fox-orange/20 rounded-lg p-4 text-center">
+                                        <div class="text-2xl font-bold text-fox-orange-dark">100%</div>
+                                        <div class="text-sm text-fox-gray">Tyytyväisyys</div>
+                                    </div>
+                                    <div class="bg-fox-blue/20 rounded-lg p-4 text-center">
+                                        <div class="text-2xl font-bold text-fox-blue-dark">24/7</div>
+                                        <div class="text-sm text-fox-gray">Tuki</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="story-block">
-          <h3>Kuka on Fox-In-The-Code?</h3>
-          <p>
-            Olen rakentaja, suunnittelija, kehittäjä ja kehittämisen kokenut monivuotinen asiantuntija vaativilta tuotanto- ja palveluliiketoiminnan aloilta. Yhdistän käytännönläheisen sovellussuunnittelun ja modernin teknologiaosaamisen. Työkalupakkiini kuuluvat mm. VS Code, GitHub Actions, Python, JavaScript, Tailwind CSS, SQL sekä REST API -integraatiot ja kevyt pilviarkkitehtuuri.
-            <br /><br />
-            Toimin itsenäisesti, mutta taustalla on laaja verkosto eri alan asiantuntijoita – tarvittaessa kokoan tiimin, jolla ratkaistaan ne isommat ja kinkkisimmätkin haasteet.
-          </p>
+    <!-- CTA Section -->
+    <section class="py-20 hero-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Tarvitsetko Ratkaisun, Joka Ei Hajoa Eikä Jää Puolitiehen?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Rakennamme sovelluksia, jotka kestävät aikaa, kasvua ja käyttöä. Keskustellaan projektistasi ja tehdään siitä totta.
+            </p>
+            <a href="contact.html" class="bg-fox-green hover:bg-fox-green-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 inline-block">
+                Ota Yhteyttä
+            </a>
         </div>
+    </section>
 
-        <div class="story-cta">
-          <h3>Tarvitsetko ratkaisun, joka ei hajoa eikä jää puolitiehen?</h3>
-          <a href="contact.html" class="btn">Ota yhteyttä</a>
+    <!-- Footer -->
+    <footer class="bg-fox-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="images/slide4.png" alt="Fox Logo" class="h-12 w-12 rounded-full object-cover">
+                        <div>
+                            <h3 class="text-2xl font-bold gradient-text">Fox-In-The-Code</h3>
+                            <p class="text-fox-orange-light">www.foxinthecode.fi</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Ammattimaista web-kehitystä ja AI-ratkaisuja modernilla teknologialla. 
+                        Vien yrityksesi digitaalisen läsnäolon seuraavalle tasolle.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Palvelut</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-fox-green transition-colors">Web Development</a></li>
+                        <li><a href="services.html" class="hover:text-fox-green transition-colors">AI Solutions</a></li>
+                        <li><a href="services.html" class="hover:text-fox-green transition-colors">DevOps</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Yhteystiedot</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>www.foxinthecode.fi</li>
+                        <li><a href="contact.html" class="hover:text-fox-green transition-colors">Ota yhteyttä</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Fox-In-The-Code. Kaikki oikeudet pidätetään.</p>
+            </div>
         </div>
-      </section>
-
-    </main>
-
-    <!-- ===============================
-         FOOTER / ALATUNNISTE
-    =============================== -->
-    <footer class="footer">
-      <p>&copy; 2025 Fox-In-The-Code | All rights reserved.</p>
     </footer>
-  </div>
-  <!-- ===============================
-    JavaScript: lomakeilmoitus
-  =============================== -->
-  <script>
-    // Lataa nav.html ja lisää sen sivulle
-    fetch("nav.html")
-      .then(response => response.text())
-      .then(data => {
-        const placeholder = document.createElement("div");
-        placeholder.innerHTML = data;
-        document.body.insertBefore(placeholder, document.body.firstChild);
-  
-        // Aktivoi burger-valikon toiminto navin lataamisen jälkeen
-        const script = document.createElement("script");
-        script.innerHTML = `
-          function toggleMenu() {
-            document.getElementById('nav-links').classList.toggle('active');
-          }
-        `;
-        document.body.appendChild(script);
-      });
-  </script>
 
-
-
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Smooth scrolling for anchor links (only for same-page anchors)
+        document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>

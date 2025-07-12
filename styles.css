@@ -117,7 +117,7 @@ main {
 }
 
 .hero-image img {
-  max-width: 630px;  /* Voit säätää tätä arvoa esim. 600px tai 640px */
+  max-width: 680px;  /* Voit säätää tätä arvoa esim. 600px tai 640px */
   width: 100%;
   height: auto;
   border-radius: 8px;
