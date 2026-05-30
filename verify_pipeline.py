@@ -37,8 +37,8 @@ def test_jax_sciml_compilation():
         return False
 
 def test_html_dom_structure():
-    """Validioi index.html:n kriittiset elementit elokuvallista Hero-putkea varten."""
-    print("[TDD] Analyzing HTML DOM Integrity...")
+    """Validioi index.html:n kriittiset elementit ja resurssien fyysisen olemassaolon."""
+    print("[TDD] Analyzing HTML DOM and Asset Integrity...")
     if not os.path.exists("index.html"):
         print("❌ Error: index.html not found.")
         return False
@@ -46,7 +46,6 @@ def test_html_dom_structure():
     with open("index.html", "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f.read(), "html.parser")
         
-    # Tarkistetaan Hollywood-eron elementit
     hero_section = soup.find("section", id="hero")
     hero_video = soup.find("video", id="hero-video")
     
@@ -57,9 +56,15 @@ def test_html_dom_structure():
     if not hero_video:
         print("❌ Validation Error: Elokuvallinen <video id='hero-video'> puuttuu hero-sektiosta.")
         errors += 1
+    else:
+        # Pysäytetään putki, jos viitattua videotiedostoa ei löydy fyysisesti hakemistosta
+        video_src = "video1.mp4"
+        if not os.path.exists(video_src):
+            print(f"❌ Asset Error: Videotiedostoa '{video_src}' ei löydy projektin juuresta!")
+            errors += 1
         
     if errors == 0:
-        print("✅ HTML DOM Structural Validation Passed.")
+        print("✅ HTML DOM and Asset Validation Passed.")
         return True
     return False
 
