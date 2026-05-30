@@ -18,13 +18,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
+          cache: "pip" # Lukee nyt onnistuneesti juuren requirements.txt-tiedoston
 
-      - name: 3. Install System Dependencies & JAX (CPU-mode for CI)
+      - name: 3. Install Dependencies from Matrix
         run: |
           python -m pip install --upgrade pip
-          pip install --upgrade "jax[cpu]"
-          pip install beautifulsoup4
+          pip install -r requirements.txt
 
       - name: 4. Execute Deterministic TDD Test Suite
         run: |

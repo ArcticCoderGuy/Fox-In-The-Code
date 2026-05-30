@@ -1,0 +1,5 @@
+# Luodaan tiedosto
+New-Item -ItemType File -Path "requirements.txt" -Force
+
+# Kirjoitetaan riippuvuudet tiedostoon
+Set-Content -Path "requirements.txt" -Value "beautifulsoup4`njax[cpu]"
