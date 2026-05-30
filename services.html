@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palvelut – Fox-In-The-Code</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'fox-orange': '#E97C35',
+                        'fox-orange-light': '#F19658',
+                        'fox-orange-dark': '#D86A2E',
+                        'fox-blue': '#1E3A8A',
+                        'fox-blue-light': '#3B82F6',
+                        'fox-blue-dark': '#1E40AF',
+                        'fox-green': '#059669',
+                        'fox-green-light': '#10B981',
+                        'fox-green-dark': '#047857',
+                        'fox-dark': '#0F172A',
+                        'fox-gray': '#64748B',
+                        'fox-light': '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #1E3A8A 0%, #059669 50%, #E97C35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-morphism {
+            background: rgba(30, 58, 138, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(5, 150, 105, 0.2);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #059669 100%);
+        }
+        
+        .code-pattern {
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(5, 150, 105, 0.15) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-fox-dark text-white overflow-x-hidden">
+    <nav class="fixed w-full top-0 z-50 glass-morphism">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center space-x-3">
+                        <img src="images/slide4.png" alt="Fox Logo" class="h-10 w-10 rounded-full object-cover">
+                        <div>
+                            <h1 class="text-xl font-bold gradient-text">Fox-In-The-Code</h1>
+                            <p class="text-xs text-fox-orange-light">www.foxinthecode.fi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-fox-green transition-colors duration-300">Etusivu</a>
+                        <a href="services.html" class="text-fox-green border-b-2 border-fox-green font-semibold">Palvelut</a>
+                        <a href="about.html" class="text-gray-300 hover:text-fox-green transition-colors duration-300">Tietoa Meistä</a>
+                        <a href="contact.html" class="bg-fox-green hover:bg-fox-green-dark text-white px-4 py-2 rounded-lg transition-colors duration-300">Ota Yhteyttä</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-fox-green">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden glass-morphism">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-fox-green">Etusivu</a>
+                <a href="services.html" class="block px-3 py-2 text-fox-green font-semibold">Palvelut</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-300 hover:text-fox-green">Tietoa Meistä</a>
+                <a href="contact.html" class="block px-3 py-2 bg-fox-green text-white rounded-lg">Ota Yhteyttä</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-[45vh] flex items-center justify-center hero-bg code-pattern pt-24">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-4">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">
+                <span class="gradient-text">Cybernetic Pipelines</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light">
+                Deterministiset päätöksentekojärjestelmät ja Scientific Machine Learning (SciML) -infrastruktuurit.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-fox-light text-fox-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+            
+            <div id="pipeline-tensor" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-14 h-14 bg-fox-blue rounded-xl flex items-center justify-center text-white text-2xl font-mono shadow-md">
+                            01
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-fox-blue-dark tracking-tight">HP Tensor Physics (JAX / XLA)</h2>
+                    </div>
+                    <p class="text-base text-fox-gray leading-relaxed font-light">
+                        Määritämme reaalimaailman datan moniulotteisiksi tensoreiksi $\mathbf{X} \in \mathbb{R}^{b \times n \times d \times k}$. Ohitamme perinteiset hitaat Python-silmukat ja vektorointi ajetaan rautatason kiihdytyksellä (vmap/pmap) suoraan GPU-klustereille.
+                    </p>
+                    <ul class="space-y-2 text-fox-gray font-medium text-sm">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-blue rounded-full mr-3"></span> Puhdas, sivuvaikutukseton tensorilaskenta (Pure Functions)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-blue rounded-full mr-3"></span> JIT-käännös optimoidulle XLA-kääntäjälle</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-blue rounded-full mr-3"></span> Suorituskyvyn lineaarinen laiteskaalaus</li>
+                    </ul>
+                </div>
+                <div class="bg-fox-dark p-6 rounded-2xl border border-fox-blue/10 shadow-xl font-mono text-xs text-gray-300">
+                    <p class="text-fox-orange mb-2">// Device Compilation Profile</p>
+                    <p># jax.pmap parallelization matrix active</p>
+                    <p>Devices Detected: 8 GPU Cores (XLA Accelerated)</p>
+                    <p>Throughput Rate: Stable 140k op/sec</p>
+                    <p class="text-fox-green mt-2">>>> Execution Status: Nominal</p>
+                </div>
+            </div>
+
+            <div id="pipeline-tqg" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="lg:order-last space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-14 h-14 bg-fox-green rounded-xl flex items-center justify-center text-white text-2xl font-mono shadow-md">
+                            02
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-fox-green-dark tracking-tight">Signal Compression & Filter (TQG)</h2>
+                    </div>
+                    <p class="text-base text-fox-gray leading-relaxed font-light">
+                        Reaalimaailman data on täynnä häiriöitä ja mustia laatikoita. Kehittämämme Triple Quantile Gate -algoritmi puristaa satunnaisen kohinan puhtaaksi ohjaussignaaliksi reaaliajassa, eristäen Pareto-pohjaiset poikkeamat.
+                    </p>
+                    <ul class="space-y-2 text-fox-gray font-medium text-sm">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-green rounded-full mr-3"></span> Iteratiivinen signaalin kvantiilisuodatus</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-green rounded-full mr-3"></span> Kohinan puristaminen matemaattiseksi determinismiksi</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-green rounded-full mr-3"></span> Auditoitava signaaliketjun seuranta</li>
+                    </ul>
+                </div>
+                <div class="bg-fox-dark p-6 rounded-2xl border border-fox-green/10 shadow-xl flex items-center justify-center">
+                    <img src="images/MatchQuote.png" alt="TQG Compression Architecture" class="w-4/5 h-auto object-contain filter drop-shadow-md">
+                </div>
+            </div>
+
+            <div id="pipeline-fsm" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-14 h-14 bg-fox-orange rounded-xl flex items-center justify-center text-white text-2xl font-mono shadow-md">
+                            03
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-fox-orange-dark tracking-tight">Deterministic FSM Systems ("Meatball")</h2>
+                    </div>
+                    <p class="text-base text-fox-gray leading-relaxed font-light">
+                        Päätöksenteon ei kuulu arvailla. Suodatetun signaalin pohjalta toimiva matemaattinen tilakone (Finite State Machine) tekee täysin matalan latenssin päätöksiä ilman epävarmuutta. Sama syöte tuottaa poikkeuksetta saman tuloksen.
+                    </p>
+                    <ul class="space-y-2 text-fox-gray font-medium text-sm">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-orange rounded-full mr-3"></span> Matala latenssi ilman tulkinnanvaraisuutta</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-orange rounded-full mr-3"></span> Matemaattisesti varmennettu tilasiirtymämoottori</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-fox-orange rounded-full mr-3"></span> Lopullinen SHA256-varmennus ja auditointijälki</li>
+                    </ul>
+                </div>
+                <div class="bg-fox-dark p-6 rounded-2xl border border-fox-orange/10 shadow-xl flex items-center justify-center">
+                    <img src="images/Limbox.png" alt="Deterministic Execution Engine" class="w-4/5 h-auto object-contain filter drop-shadow-md">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 hero-bg code-pattern text-center relative">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+            <h2 class="text-4xl font-extrabold tracking-tight">Tarvitsetko järjestelmää, joka ei arvaile?</h2>
+            <p class="text-lg text-gray-300 max-w-xl mx-auto font-light">
+                Rakennamme sovelluksia ja laskentaputkia, joiden matemaattinen virhemarginaali on nolla. Keskustellaan projektistasi.
+            </p>
+            <a href="contact.html" class="bg-fox-green hover:bg-fox-green-dark text-white px-8 py-4 rounded-lg text-base font-semibold transition-all duration-300 inline-block hover:scale-105 shadow-md">
+                Ota Yhteyttä Tiimiin
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-fox-dark text-white py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
+            <p>&copy; 2026 Fox-In-The-Code. Kaikki oikeudet pidätetään.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
