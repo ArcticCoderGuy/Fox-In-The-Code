@@ -1,9 +1,4 @@
 # verify_pipeline.py
-"""
-VOJKER Cybernetic Decision Infrastructure - CI/CD Pipeline Validator
-Executes structural HTML testing and JAX mathematical compiler verification.
-"""
-
 import os
 import sys
 import hashlib
@@ -12,21 +7,16 @@ import jax.numpy as jnp
 from bs4 import BeautifulSoup
 
 def test_jax_sciml_compilation():
-    """Varmistaa, että sivustolla esitettävä JAX-ydinfunktio kääntyy virheettömästi XLA:lle."""
     print("[TDD] Executing JAX/XLA Compilation Test...")
-    
-    # Määritetään kiinteät testidimension koot: b=batch, n=instruments, d=features, k=depth
     b, n, d, k = 4, 10, 8, 3
     key = jax.random.PRNGKey(42)
     mock_tensor = jax.random.normal(key, (b, n, d, k))
     
     @jax.jit
     def target_filter(tensor):
-        # Yhdenmukainen etusivun koodi-ikkunan matemaattisen logiikan kanssa
         signal = jnp.mean(tensor, axis=-1)
         return jnp.tanh(signal)
     
-    # Ajetaan koekäännös (Tracer -> JIT compilation)
     try:
         output = target_filter(mock_tensor)
         assert output.shape == (b, n, d)
@@ -37,42 +27,50 @@ def test_jax_sciml_compilation():
         return False
 
 def test_html_dom_structure():
-    """Validioi index.html:n kriittiset elementit ja resurssien fyysisen olemassaolon."""
     print("[TDD] Analyzing HTML DOM and Asset Integrity...")
+    errors = 0
+    
+    # 1. index.html tarkastus
     if not os.path.exists("index.html"):
         print("❌ Error: index.html not found.")
         return False
-        
     with open("index.html", "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f.read(), "html.parser")
-        
-    hero_section = soup.find("section", id="hero")
-    hero_video = soup.find("video", id="hero-video")
     
-    errors = 0
-    if not hero_section:
-        print("❌ Validation Error: <section id='hero'> puuttuu DOM-rakenteesta.")
+    if not soup.find("section", id="hero"):
+        print("❌ Validation Error: index.html: <section id='hero'> puuttuu.")
         errors += 1
-    if not hero_video:
-        print("❌ Validation Error: Elokuvallinen <video id='hero-video'> puuttuu hero-sektiosta.")
+    if not soup.find("video", id="hero-video"):
+        print("❌ Validation Error: index.html: <video id='hero-video'> puuttuu.")
         errors += 1
     else:
-        # Pysäytetään putki, jos viitattua videotiedostoa ei löydy fyysisesti hakemistosta
-        video_src = "video1.mp4"
-        if not os.path.exists(video_src):
-            print(f"❌ Asset Error: Videotiedostoa '{video_src}' ei löydy projektin juuresta!")
+        if not os.path.exists("video1.mp4"):
+            print("❌ Asset Error: video1.mp4 puuttuu projektin juuresta!")
             errors += 1
+            
+    # 2. Services.html tarkastus
+    if not os.path.exists("services.html"):
+        print("❌ Error: services.html not found.")
+        return False
+    with open("services.html", "r", encoding="utf-8") as f:
+        s_soup = BeautifulSoup(f.read(), "html.parser")
         
+    for p_id in ["pipeline-tensor", "pipeline-tqg", "pipeline-fsm"]:
+        if not s_soup.find(id=p_id):
+            print(f"❌ Validation Error: services.html: Elementtiä id='{p_id}' puuttuu.")
+            errors += 1
+
     if errors == 0:
         print("✅ HTML DOM and Asset Validation Passed.")
         return True
     return False
 
 def generate_build_audit_hash():
-    """Luo SHA256-tiivisteen build-vaiheen auditoitavuutta varten."""
     hasher = hashlib.sha256()
-    with open("index.html", "rb") as f:
-        hasher.update(f.read())
+    for name in ["index.html", "services.html"]:
+        if os.path.exists(name):
+            with open(name, "rb") as f:
+                hasher.update(f.read())
     build_hash = hasher.hexdigest()
     print(f"[AUDIT] Build SHA256 Signature: {build_hash}")
     return build_hash
@@ -81,18 +79,8 @@ if __name__ == "__main__":
     print("="*60)
     print("VOJKER INFRASTRUCTURE SUITE: RUNNING TESTS")
     print("="*60)
-    
-    jax_success = test_jax_sciml_compilation()
-    html_success = test_html_dom_structure()
-    
-    if jax_success and html_success:
-        build_hash = generate_build_audit_hash()
-        print("="*60)
+    if test_jax_sciml_compilation() and test_html_dom_structure():
+        generate_build_audit_hash()
         print("🚀 ALL SYSTEMS NOMINAL - READY FOR DEPLOYMENT")
-        print("="*60)
         sys.exit(0)
-    else:
-        print("="*60)
-        print("❌ PIPELINE FAILURE: FIX REGRESSIONS BEFORE COMMIT")
-        print("="*60)
-        sys.exit(1)
+    sys.exit(1)
