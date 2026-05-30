@@ -64,11 +64,16 @@
                 radial-gradient(circle at 1px 1px, rgba(5, 150, 105, 0.15) 1px, transparent 0);
             background-size: 20px 20px;
         }
+
+        #hero-video {
+            backface-visibility: hidden;
+            transform: translate3d(-50%, -50%, 0);
+            will-change: transform;
+        }
     </style>
 </head>
 
 <body class="font-inter bg-fox-dark text-white overflow-x-hidden">
-    <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 glass-morphism">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -101,7 +106,6 @@
             </div>
         </div>
         
-        <!-- Mobile menu -->
         <div id="mobile-menu" class="md:hidden hidden glass-morphism">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 text-fox-green font-semibold">Etusivu</a>
@@ -112,40 +116,102 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center hero-bg code-pattern pt-24">
-        <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-            <div class="mb-8">
-                <div class="w-96 h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] mx-auto mb-8 relative">
-                    <img src="images/slide4.png" alt="Fox-In-The-Code Logo" class="w-full h-full object-contain">
+    <section id="hero" class="relative min-h-screen flex items-center justify-center bg-fox-dark overflow-hidden pt-16">
+        
+        <div class="absolute inset-0 w-full h-full z-0 pointer-events-none">
+            <video 
+                autoplay 
+                loop 
+                muted 
+                playsinline 
+                id="hero-video"
+                poster="images/slide4.png" 
+                class="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover opacity-40 filter brightness-75 contrast-125 transition-transform duration-[10000ms] ease-out">
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="absolute inset-0 z-10 bg-gradient-to-b from-fox-dark/80 via-fox-dark/40 to-fox-dark pointer-events-none code-pattern"></div>
+
+        <div class="relative z-20 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
+            
+            <div class="lg:col-span-5 text-left space-y-6">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 bg-fox-orange/10 border border-fox-orange/30 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-fox-orange animate-pulse"></span>
+                    <span class="text-xs font-mono text-fox-orange-light tracking-widest uppercase">SciML Infrastructure v1.0</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none">
+                    <span class="gradient-text">Certainty</span><br>
+                    <span class="text-white">In An Uncertain World.</span>
+                </h1>
+                
+                <p class="text-lg text-gray-300 font-light leading-relaxed max-w-lg">
+                    Muunnamme kohinaisen reaalimaailman datan deterministisiksi, auditoitaviksi päätöksiksi. Korkean suorituskyvyn tensorilaskentaa ja fysiikkaohjattua koneoppimista JAX/XLA-ekosysteemissä.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="services.html" class="bg-fox-green hover:bg-fox-green-dark text-white px-8 py-4 rounded-lg text-base font-semibold transition-all duration-300 text-center hover:scale-[1.02] shadow-lg shadow-fox-green/20">
+                        Katso Palvelut
+                    </a>
+                    <a href="contact.html" class="glass-morphism border border-white/10 hover:border-fox-green/40 text-white px-8 py-4 rounded-lg text-base font-semibold transition-all duration-300 text-center hover:scale-[1.02]">
+                        Ota Yhteyttä
+                    </a>
                 </div>
             </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold mb-8">
-                <span class="gradient-text">Fox-In-The-Code</span><br>
-                <span class="text-white text-3xl md:text-4xl font-normal">Web & AI Development</span>
-            </h1>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <a href="services.html" class="bg-fox-green hover:bg-fox-green-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105">
-                    Katso Palvelut
-                </a>
-                <a href="contact.html" class="glass-morphism text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105">
-                    Ota Yhteyttä
-                </a>
+
+            <div class="lg:col-span-7 flex flex-col justify-center relative">
+                <div class="absolute -top-10 -left-10 w-72 h-72 bg-fox-blue/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+                
+                <div class="w-full bg-[#090d16]/95 border border-white/10 rounded-xl shadow-2xl backdrop-blur-md overflow-hidden font-mono text-xs sm:text-sm">
+                    <div class="bg-[#0f172a] px-4 py-3 border-b border-white/5 flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
+                        </div>
+                        <span class="text-gray-400 text-xs font-sans font-medium flex items-center gap-2">
+                            <img src="images/favicon.png" class="w-4 h-4 rounded-full object-cover">
+                            vojker_engine.py
+                        </span>
+                        <span class="text-fox-green-light text-xs font-semibold select-none">[XLA_COMPILE]</span>
+                    </div>
+                    
+                    <div class="p-6 space-y-4 overflow-x-auto text-gray-300 leading-relaxed">
+                        <div>
+                            <span class="text-purple-400">import</span> jax.numpy <span class="text-purple-400">as</span> jnp<br>
+                            <span class="text-purple-400">from</span> jax <span class="text-purple-400">import</span> vmap, pmap, jit
+                        </div>
+                        
+                        <div>
+                            <span class="text-green-500">@jit</span><br>
+                            <span class="text-blue-400">def</span> <span class="text-yellow-400">tqg_signal_filter</span>(tensor_snapshot):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500"># Axes: b=snapshot, n=instruments, d=features, k=depth</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;b, n, d, k = tensor_snapshot.shape<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;signal = jnp.mean(tensor_snapshot, axis=-1)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> jnp.tanh(signal)
+                        </div>
+
+                        <div class="border-t border-white/5 pt-3 flex items-center justify-between text-gray-400 text-xs">
+                            <span class="flex items-center gap-1">
+                                <span class="w-2 h-2 rounded-full bg-fox-green animate-ping"></span>
+                                Pipeline Status: Execution Optimized
+                            </span>
+                            <span>Shape: (b, n, d, k)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute -bottom-8 -right-4 w-28 h-28 md:w-36 md:h-36 pointer-events-none transform rotate-6 transition-transform duration-500 hover:rotate-0">
+                    <img src="images/slide4.png" alt="Fox Wireframe" class="w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(233,124,53,0.4)]">
+                </div>
             </div>
+
         </div>
         
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
+        <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-fox-green/50 to-transparent z-20"></div>
     </section>
 
-    <!-- Tech Stack Section -->
     <section id="tech" class="py-20 bg-fox-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
@@ -155,7 +221,6 @@
                 </p>
             </div>
             
-            <!-- Logo carousel -->
             <div class="relative overflow-hidden">
                 <div class="flex space-x-8 scroll-animation">
                     <img src="images/logos/python.svg" alt="Python" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
@@ -168,33 +233,11 @@
                     <img src="images/logos/github.svg" alt="GitHub" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
                     <img src="images/logos/pytorch.svg" alt="PyTorch" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
                     <img src="images/logos/tensorflow.svg" alt="TensorFlow" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/mongodb.svg" alt="MongoDB" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/pandas.svg" alt="Pandas" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/numpy.svg" alt="NumPy" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/figma.svg" alt="Figma" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/githubactions.svg" alt="GitHub Actions" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/bootstrap.svg" alt="Bootstrap" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/sqlite.svg" alt="SQLite" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/confluence.svg" alt="Confluence" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/kotlin.svg" alt="Kotlin" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/cplusplus.svg" alt="C++" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <!-- Duplicate for seamless loop -->
-                    <img src="images/logos/python.svg" alt="Python" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/javascript.svg" alt="JavaScript" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/html5.svg" alt="HTML5" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/css.svg" alt="CSS" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/tailwindcss.svg" alt="TailwindCSS" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/nextdotjs.svg" alt="Next.js" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/docker.svg" alt="Docker" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/github.svg" alt="GitHub" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/pytorch.svg" alt="PyTorch" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
-                    <img src="images/logos/tensorflow.svg" alt="TensorFlow" class="h-16 w-16 flex-shrink-0 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-fox-dark text-white py-12 border-t border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -237,30 +280,12 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-            });
         });
     </script>
 </body>
